@@ -11,7 +11,10 @@
     "test-storybook": "test-storybook",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
-    "prettier": "npx prettier --write ."
+    "prettier": "npx prettier --write .",
+    "clean": "rimraf ./dist",
+    "prebuild": "yarn clean",
+    "release": "yarn build && auto shipit"
   },
   "private": true,
   "dependencies": {
