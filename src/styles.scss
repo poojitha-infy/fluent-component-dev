@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files  */
+ @import 'styles/theme.scss';
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base400;
+  color: $color-text-primary;
+}
+
+button {
+  background-color: $color-primary-blue;
+  color: $color-neutral-white;
+  border-radius: $border-radius-medium;
+  box-shadow: $shadow-2;
+  padding: $spacing-vertical-s $spacing-horizontal-m;
+  
+  &:hover {
+    background-color: $color-primary-blue;
+    color: $color-neutral-white;
+  }
+}
+
+.card {
+  background-color: $color-neutral-white;
+  box-shadow: $shadow-4;
+  border-radius: $border-radius-small;
+  padding: $spacing-vertical-m $spacing-horizontal-l;
+}

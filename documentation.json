@@ -59,17 +59,17 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-d524e27179dea555abe605753c0757478b754e47709a45b2b55d0dfd82fd9a68fc1f15f1200b8bf068a7e3fd953962e0047e289bd1982b37ebc04e8e88a16e02",
+            "id": "component-ButtonComponent-92ba23436a1b3f4c8a903e35cc8f1fd03af841d6c7e8d7d5b35143dc55da641c1ba8617847dedfb250be33e9b96a2763b413b9bd9168856423592e4dc13b9319",
             "file": "src/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "button-delish",
+            "selector": "app-fluent-button-wrapper",
             "styleUrls": [],
             "styles": [],
-            "template": "  <fluent-button\n  [appearance]=\"appearance\"\n  [attr.disabled]=\"disabled ? true : null\"\n  [attr.disabled-focusable]=\"disabledFocusable ? true : null\"\n  [attr.icon-only]=\"iconOnly ? true : null\"\n  [attr.icon]=\"icon\"\n>\n  {{ content }}\n</fluent-button>\n",
+            "template": "  <fluent-button\n  [appearance]=\"appearance\"\n  [attr.disabled]=\"disabled ? true : null\"\n  [attr.disabled-focusable]=\"disabledFocusable ? true : null\"\n  [attr.icon-only]=\"iconOnly ? true : null\"\n  [attr.icon]=\"icon\"\n  (click)=\"onClick()\"\n>\n  {{ content }}\n</fluent-button>\n\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -79,7 +79,7 @@
                     "defaultValue": "'accent'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 26,
                     "type": "ButtonAppearance",
                     "decorators": []
                 },
@@ -88,7 +88,7 @@
                     "defaultValue": "'Button'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 28,
+                    "line": 31,
                     "type": "string",
                     "decorators": []
                 },
@@ -97,7 +97,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 24,
+                    "line": 27,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -106,7 +106,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 25,
+                    "line": 28,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -115,7 +115,7 @@
                     "defaultValue": "null",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 27,
+                    "line": 30,
                     "type": "string | null",
                     "decorators": []
                 },
@@ -124,7 +124,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 26,
+                    "line": 29,
                     "type": "boolean",
                     "decorators": []
                 }
@@ -132,14 +132,197 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "title",
-                    "defaultValue": "'angular-latest'",
+                    "name": "exampleTextField",
+                    "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 22
+                    "line": 34
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onClick",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 36,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component,Input } from '@angular/core';\r\nimport '@fluentui/web-components/button.js';\r\n\r\n\r\nexport type ButtonAppearance = 'accent' | 'lightweight' | 'neutral' | 'outline' | 'stealth';\r\n\r\n\r\n@Component({\r\n  selector: 'app-fluent-button-wrapper',\r\n  template: `\r\n  <fluent-button\r\n  [appearance]=\"appearance\"\r\n  [attr.disabled]=\"disabled ? true : null\"\r\n  [attr.disabled-focusable]=\"disabledFocusable ? true : null\"\r\n  [attr.icon-only]=\"iconOnly ? true : null\"\r\n  [attr.icon]=\"icon\"\r\n  (click)=\"onClick()\"\r\n>\r\n  {{ content }}\r\n</fluent-button>\r\n\r\n  `,\r\n  styles: [],\r\n})\r\nexport class ButtonComponent {\r\n  @Input() appearance: ButtonAppearance = 'accent'; \r\n  @Input() disabled: boolean = false;\r\n  @Input() disabledFocusable: boolean = false;\r\n  @Input() iconOnly: boolean = false;\r\n  @Input() icon: string | null = null;\r\n  @Input() content: string = 'Button';\r\n\r\n\r\n  exampleTextField = '';\r\n\r\n  onClick() {\r\n    console.log(this.exampleTextField);\r\n  }\r\n  \r\n\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "CheckboxComponent",
+            "id": "component-CheckboxComponent-f9be19c49c00c2322b47bc83ae74c358c8e3d256512c377ae5924820f217fb1311f310ac84a4a743c639e77eb843cd706cfaefcdd892d959b7cf05b21c7d1381",
+            "file": "src/checkbox/checkbox.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-fluent-checkbox-wrapper",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<fluent-checkbox [name]=\"name\" [checked]=\"checked\" [disabled]=\"disabled\" > {{message}}</fluent-checkbox>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "checked",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "message",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "name",
+                    "defaultValue": "\"checkbox\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component,Input } from '@angular/core';\r\n\r\nimport '@fluentui/web-components/checkbox.js';\r\n\r\n\r\n@Component({\r\n  selector: 'app-fluent-checkbox-wrapper',\r\n  template: `\r\n<fluent-checkbox [name]=\"name\" [checked]=\"checked\" [disabled]=\"disabled\" > {{message}}</fluent-checkbox>\r\n  `,\r\n  styles: [],\r\n})\r\nexport class CheckboxComponent {\r\n    @Input() checked: boolean = false;\r\n    @Input() disabled: boolean = false;\r\n    @Input() name: string = \"checkbox\";\r\n    @Input() message:string = \"\";\r\n  \r\n\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "MessageBarComponent",
+            "id": "component-MessageBarComponent-a643578f3625ce14d75fcc0c1d5053d224ccf30bec20360ac4b4512787988bc949aa050cf80cafe24185f73e0a99ba18a03c740afaca5e1c79a93a3d8dbb2323",
+            "file": "src/message-bar/message-bar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-message-bar",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./message-bar.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "ariaLabelledBy",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "ariaLive",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "content",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "intent",
+                    "defaultValue": "MessageBarIntent.info",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "MessageBarIntent",
+                    "decorators": []
+                },
+                {
+                    "name": "layout",
+                    "defaultValue": "MessageBarLayout.singleline",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "MessageBarLayout",
+                    "decorators": []
+                },
+                {
+                    "name": "shape",
+                    "defaultValue": "MessageBarShape.rounded",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "MessageBarShape",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "infoIcon",
+                    "defaultValue": "html`\r\n  <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n    <path\r\n      d=\"M18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18C14.4183 18 18 14.4183 18 10ZM9.50806 8.91012C9.55039 8.67687 9.75454 8.49999 10 8.49999C10.2455 8.49999 10.4496 8.67687 10.4919 8.91012L10.5 8.99999V13.5021L10.4919 13.592C10.4496 13.8253 10.2455 14.0021 10 14.0021C9.75454 14.0021 9.55039 13.8253 9.50806 13.592L9.5 13.5021V8.99999L9.50806 8.91012ZM9.25 6.74999C9.25 6.33578 9.58579 5.99999 10 5.99999C10.4142 5.99999 10.75 6.33578 10.75 6.74999C10.75 7.16421 10.4142 7.49999 10 7.49999C9.58579 7.49999 9.25 7.16421 9.25 6.74999Z\"\r\n      fill=\"#616161\"\r\n    />\r\n  </svg>\r\n`",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
                 }
             ],
             "methodsClass": [],
@@ -152,147 +335,480 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component,Input } from '@angular/core';\r\n\r\nexport type ButtonAppearance = 'accent' | 'lightweight' | 'neutral' | 'outline' | 'stealth';\r\n\r\n\r\n@Component({\r\n  selector: 'button-delish',\r\n  template: `\r\n  <fluent-button\r\n  [appearance]=\"appearance\"\r\n  [attr.disabled]=\"disabled ? true : null\"\r\n  [attr.disabled-focusable]=\"disabledFocusable ? true : null\"\r\n  [attr.icon-only]=\"iconOnly ? true : null\"\r\n  [attr.icon]=\"icon\"\r\n>\r\n  {{ content }}\r\n</fluent-button>\r\n  `,\r\n  styles: [],\r\n})\r\nexport class ButtonComponent {\r\n  title = 'angular-latest';\r\n  @Input() appearance: ButtonAppearance = 'accent'; \r\n  @Input() disabled: boolean = false;\r\n  @Input() disabledFocusable: boolean = false;\r\n  @Input() iconOnly: boolean = false;\r\n  @Input() icon: string | null = null;\r\n  @Input() content: string = 'Button';\r\n\r\n}",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { MessageBarShape, MessageBarLayout, MessageBarIntent } from './message-bar.options';\r\nimport '@fluentui/web-components/message-bar.js';\r\nimport { html } from '@microsoft/fast-element';\r\n\r\n@Component({\r\n  selector: 'app-message-bar',\r\n  templateUrl: './message-bar.component.html',\r\n  styleUrls: []\r\n})\r\nexport class MessageBarComponent {\r\n  @Input() content: string = '';\r\n  @Input() shape: MessageBarShape = MessageBarShape.rounded;\r\n  @Input() layout: MessageBarLayout = MessageBarLayout.singleline;\r\n  @Input() intent: MessageBarIntent = MessageBarIntent.info;\r\n  @Input() ariaLive?: string;\r\n  @Input() ariaLabelledBy?: string;\r\n\r\n   infoIcon = html`\r\n  <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n    <path\r\n      d=\"M18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18C14.4183 18 18 14.4183 18 10ZM9.50806 8.91012C9.55039 8.67687 9.75454 8.49999 10 8.49999C10.2455 8.49999 10.4496 8.67687 10.4919 8.91012L10.5 8.99999V13.5021L10.4919 13.592C10.4496 13.8253 10.2455 14.0021 10 14.0021C9.75454 14.0021 9.55039 13.8253 9.50806 13.592L9.5 13.5021V8.99999L9.50806 8.91012ZM9.25 6.74999C9.25 6.33578 9.58579 5.99999 10 5.99999C10.4142 5.99999 10.75 6.33578 10.75 6.74999C10.75 7.16421 10.4142 7.49999 10 7.49999C9.58579 7.49999 9.25 7.16421 9.25 6.74999Z\"\r\n      fill=\"#616161\"\r\n    />\r\n  </svg>\r\n`;\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": []
+            "extends": [],
+            "templateData": "\r\n\r\n<fluent-message-bar [shape]=\"shape\" [layout]=\"layout\" [intent]=\"intent\">\r\n  <span slot=\"icon\" [innerHTML]=\"infoIcon\">\r\n\r\n</span>\r\n{{content}}\r\n  <fluent-button size=\"small\" slot=\"actions\">Action</fluent-button>\r\n  <fluent-button size=\"small\" appearance=\"transparent\" icon-only=\"\" slot=\"dismiss\">\r\n    \r\n<svg fill=\"currentColor\" aria-hidden=\"true\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\">\r\n  <path d=\"m4.09 4.22.06-.07a.5.5 0 0 1 .63-.06l.07.06L10 9.29l5.15-5.14a.5.5 0 0 1 .63-.06l.07.06c.18.17.2.44.06.63l-.06.07L10.71 10l5.14 5.15c.18.17.2.44.06.63l-.06.07a.5.5 0 0 1-.63.06l-.07-.06L10 10.71l-5.15 5.14a.5.5 0 0 1-.63.06l-.07-.06a.5.5 0 0 1-.06-.63l.06-.07L9.29 10 4.15 4.85a.5.5 0 0 1-.06-.63l.06-.07-.06.07Z\" fill=\"currentColor\"></path>\r\n</svg>\r\n\r\n  </fluent-button>\r\n</fluent-message-bar>\r\n"
         },
         {
-            "name": "ButtonComponent",
-            "id": "component-ButtonComponent-c3bd323da00016e22e16a3a7d43440094eeceddea5e6076a399bcaba62f8e742efe65e543735e36f9ea1bed026ab8e3c8fb60482667ae55ec324f8adfe79b9f7-1",
-            "file": "src/buttonExample/buttonExample.component.ts",
+            "name": "RadioComponent",
+            "id": "component-RadioComponent-6f9f6fc8634bb46e9920603f10878da4e1513489e4ee7da3add4e69e0e82d6aa17ab43169bb496c929664e09505c7f9e53c9a89695e7a21c43f22a61edf75c73",
+            "file": "src/radiobutton/radio.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "storybook-button",
-            "styleUrls": [
-                "./button.css"
-            ],
+            "selector": "app-fluent-radio-wrapper",
+            "styleUrls": [],
             "styles": [],
-            "template": "<button   type=\"button\"\n   (click)=\"onClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor }\"\n >\n   {{ label }}\n </button>",
+            "template": "<fluent-field [label-position]=\"labelPosition\">\n    <label slot=\"label\">{{message}}</label>\n    <fluent-radio [name]=\"name\" [id]=\"id\" [checked]=\"checked\" [disabled]=\"disabled\" ></fluent-radio>\n  </fluent-field>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
                 {
-                    "name": "backgroundColor",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nWhat background color to use\n",
-                    "description": "<p>What background color to use</p>\n",
-                    "line": 29,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "label",
-                    "defaultValue": "'Button'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "pos": 837,
-                            "end": 851,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 838,
-                                "end": 846,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "required"
-                            },
-                            "comment": ""
-                        }
-                    ],
-                    "rawdescription": "\n\nButton contents\n\n",
-                    "description": "<p>Button contents</p>\n",
-                    "line": 43,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "primary",
+                    "name": "checked",
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "rawdescription": "\n\nIs this the principal call to action on the page?\n",
-                    "description": "<p>Is this the principal call to action on the page?</p>\n",
-                    "line": 23,
+                    "line": 24,
                     "type": "boolean",
                     "decorators": []
                 },
                 {
-                    "name": "size",
-                    "defaultValue": "'medium'",
+                    "name": "disabled",
+                    "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "rawdescription": "\n\nHow large should the button be?\n",
-                    "description": "<p>How large should the button be?</p>\n",
-                    "line": 35,
-                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "line": 25,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "id",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "labelPosition",
+                    "defaultValue": "LabelPosition.after",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "LabelPosition",
+                    "decorators": []
+                },
+                {
+                    "name": "message",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "name",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "orientation",
+                    "defaultValue": "\"vertical\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "OrientationTypes",
                     "decorators": []
                 }
             ],
-            "outputsClass": [
-                {
-                    "name": "onClick",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nOptional click handler\n",
-                    "description": "<p>Optional click handler</p>\n",
-                    "line": 49,
-                    "type": "EventEmitter"
-                }
-            ],
+            "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": true,
-            "imports": [
-                {
-                    "name": "CommonModule",
-                    "type": "module"
-                }
-            ],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-button',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  template: ` <button\r\n    type=\"button\"\r\n    (click)=\"onClick.emit($event)\"\r\n    [ngClass]=\"classes\"\r\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\r\n  >\r\n    {{ label }}\r\n  </button>`,\r\n  styleUrls: ['./button.css'],\r\n})\r\nexport class ButtonComponent {\r\n  /**\r\n   * Is this the principal call to action on the page?\r\n   */\r\n  @Input()\r\n  primary = false;\r\n\r\n  /**\r\n   * What background color to use\r\n   */\r\n  @Input()\r\n  backgroundColor?: string;\r\n\r\n  /**\r\n   * How large should the button be?\r\n   */\r\n  @Input()\r\n  size: 'small' | 'medium' | 'large' = 'medium';\r\n\r\n  /**\r\n   * Button contents\r\n   *\r\n   * @required\r\n   */\r\n  @Input()\r\n  label = 'Button';\r\n\r\n  /**\r\n   * Optional click handler\r\n   */\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\r\n\r\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component,Input } from '@angular/core';\r\nimport '@fluentui/web-components/radio.js';\r\nimport { LabelPosition } from '../other.options';\r\n\r\nexport type OrientationTypes  = 'vertical' | 'horizontal';\r\n\r\n\r\n\r\n\r\n@Component({\r\n  selector: 'app-fluent-radio-wrapper',\r\n  template: `\r\n  <fluent-field [label-position]=\"labelPosition\">\r\n      <label slot=\"label\">{{message}}</label>\r\n      <fluent-radio [name]=\"name\" [id]=\"id\" [checked]=\"checked\" [disabled]=\"disabled\" ></fluent-radio>\r\n    </fluent-field>\r\n  `,\r\n  styles: [],\r\n})\r\nexport class RadioComponent {\r\n    @Input() orientation:OrientationTypes = \"vertical\";\r\n    @Input() id: string=\"\";\r\n    @Input() name: string=\"\";\r\n    @Input() checked: boolean = false;\r\n    @Input() disabled: boolean = false;\r\n    @Input() message:string = \"\";\r\n    @Input() labelPosition: LabelPosition = LabelPosition.after;\r\n\r\n  \r\n\r\n}",
             "assetsDirs": [],
-            "styleUrlsData": [
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "SwitchComponent",
+            "id": "component-SwitchComponent-067a2a98af5a389a52e367ca08113d2dcca5fe233b4f347075a27b21a3aea5916b53994fc53171414290c6eedbeac0591a8d448c40ae1abed40b0412b153dc4e",
+            "file": "src/switch/switch.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-fluent-switct-wrapper",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<fluent-switch [checked]=\"checked\" [id]=\"id\" name=\"switch\" slot=\"input\"></fluent-switch>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
                 {
-                    "data": ".storybook-button {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  font-weight: 700;\r\n  border: 0;\r\n  border-radius: 3em;\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  line-height: 1;\r\n}\r\n.storybook-button--primary {\r\n  color: white;\r\n  background-color: #1ea7fd;\r\n}\r\n.storybook-button--secondary {\r\n  color: #333;\r\n  background-color: transparent;\r\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\r\n}\r\n.storybook-button--small {\r\n  font-size: 12px;\r\n  padding: 10px 16px;\r\n}\r\n.storybook-button--medium {\r\n  font-size: 14px;\r\n  padding: 11px 20px;\r\n}\r\n.storybook-button--large {\r\n  font-size: 16px;\r\n  padding: 12px 24px;\r\n}\r\n",
-                    "styleUrl": "./button.css"
+                    "name": "checked",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "id",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "labelPosition",
+                    "defaultValue": "LabelPosition.after",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "LabelPosition",
+                    "decorators": []
+                },
+                {
+                    "name": "name",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "required",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "boolean",
+                    "decorators": []
                 }
             ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component,Input } from '@angular/core';\r\nimport '@fluentui/web-components/switch.js';\r\nimport { LabelPosition } from '../other.options';\r\n\r\n@Component({\r\n  selector: 'app-fluent-switct-wrapper',\r\n  template: `\r\n  <fluent-switch [checked]=\"checked\" [id]=\"id\" name=\"switch\" slot=\"input\"></fluent-switch>\r\n  `,\r\n  styles: [],\r\n})\r\nexport class SwitchComponent {\r\n    @Input() checked: boolean = false;\r\n    @Input() disabled: boolean = false;\r\n    @Input() required: boolean = false;\r\n    @Input() label: string = '';\r\n    @Input() id: string = '';\r\n    @Input() labelPosition: LabelPosition = LabelPosition.after;\r\n    @Input() name: string = '';\r\n\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": "",
             "stylesData": "",
-            "extends": [],
-            "accessors": {
-                "classes": {
-                    "name": "classes",
-                    "getSignature": {
-                        "name": "classes",
-                        "type": "[]",
-                        "returnType": "string[]",
-                        "line": 51
-                    }
+            "extends": []
+        },
+        {
+            "name": "TabsComponent",
+            "id": "component-TabsComponent-cd6346171eb9cf03b8d33e6cdffe8fda98b0a4d8425ffb686b1a9cab3afeb0a5e18bd44699c8f843fcc0cca0246699d078c6dcfbbfaaca15fa2ec9687883ad56",
+            "file": "src/tabs/tabs.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-fluent-tabs-wrapper",
+            "styleUrls": [],
+            "styles": [],
+            "template": "  <fluent-tabs orientation=\"horizontal\" appearance=\"subtle\" size=\"small\">\n  <fluent-tab id=\"first-tab\"> First Tab </fluent-tab>\n  <fluent-tab id=\"second-tab\"> Second Tab</fluent-tab>\n  <fluent-tab id=\"third-tab\"> Third Tab</fluent-tab>\n  <fluent-tab id=\"fourth-tab\"> Fourth Tab</fluent-tab>\n\n  <fluent-tab-panel id=\"first-tab-panel\">Tab One Content</fluent-tab-panel>\n  <fluent-tab-panel id=\"second-tab-panel\">Tab Two Content</fluent-tab-panel>\n  <fluent-tab-panel id=\"third-tab-panel\">Tab Three Content</fluent-tab-panel>\n  <fluent-tab-panel id=\"fourth-tab-panel\">Tab Four Content</fluent-tab-panel>\n</fluent-tabs>\n\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "activeId",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "string",
+                    "decorators": []
                 }
-            },
-            "isDuplicate": true,
-            "duplicateId": 1,
-            "duplicateName": "ButtonComponent-1"
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component,Input } from '@angular/core';\r\nimport '@fluentui/web-components/tabs.js';\r\n\r\nexport type TabsList = 'apps' | 'entrees' | 'desserts';\r\n\r\n@Component({\r\n  selector: 'app-fluent-tabs-wrapper',\r\n  template: `\r\n  <fluent-tabs orientation=\"horizontal\" appearance=\"subtle\" size=\"small\">\r\n  <fluent-tab id=\"first-tab\"> First Tab </fluent-tab>\r\n  <fluent-tab id=\"second-tab\"> Second Tab</fluent-tab>\r\n  <fluent-tab id=\"third-tab\"> Third Tab</fluent-tab>\r\n  <fluent-tab id=\"fourth-tab\"> Fourth Tab</fluent-tab>\r\n\r\n  <fluent-tab-panel id=\"first-tab-panel\">Tab One Content</fluent-tab-panel>\r\n  <fluent-tab-panel id=\"second-tab-panel\">Tab Two Content</fluent-tab-panel>\r\n  <fluent-tab-panel id=\"third-tab-panel\">Tab Three Content</fluent-tab-panel>\r\n  <fluent-tab-panel id=\"fourth-tab-panel\">Tab Four Content</fluent-tab-panel>\r\n</fluent-tabs>\r\n\r\n`,\r\n  styles: [],\r\n})\r\nexport class TabsComponent {\r\n    // @Input() activeId: TabsList = 'desserts';\r\n    @Input() activeId: string = '';\r\n\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "TextInputComponent",
+            "id": "component-TextInputComponent-dea725a03110ae70537ab4d55ecde6e3d99237c5fcafd03f411a72fa02c9d7c2d441a52875c7555c0ebe37a642ad1f4525da53ae919594b4d71740cc82086d42",
+            "file": "src/text-input/text-input.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-text-input",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<div class=\"text-input\">\n<ng-content select=\"[fluent-text-input]\">\n<ng-content select=\"[fluent-label]\"></ng-content>\n</ng-content>\n\n\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "appearance",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "autocomplete",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "autofocus",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "controlSize",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "dirname",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "form",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 37,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "list",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "maxlength",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "minlength",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "multiple",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "name",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "pattern",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "readOnly",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "required",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "spellcheck",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport '@fluentui/web-components/text-input.js';\r\n\r\n@Component({\r\n  selector: 'app-text-input',\r\n  template: `\r\n   <div class=\"text-input\">\r\n   <ng-content select=\"[fluent-text-input]\">\r\n   <ng-content select=\"[fluent-label]\"></ng-content>\r\n   </ng-content>\r\n   \r\n\r\n   </div>\r\n  `,\r\n})\r\nexport class TextInputComponent {\r\n  @Input() appearance: string='';\r\n  @Input() autocomplete: string='';\r\n  @Input() autofocus: boolean=false;\r\n  @Input() controlSize: string='';\r\n  @Input() dirname: string='';\r\n  @Input() disabled: boolean=false;\r\n  @Input() form: string='';\r\n  @Input() list: string='';\r\n  @Input() maxlength: number=0;\r\n  @Input() minlength: number=0;\r\n  @Input() multiple: boolean=false;\r\n  @Input() name: string='';\r\n  @Input() pattern: string='';\r\n  @Input() placeholder: string='';\r\n  @Input() readOnly: boolean=false;\r\n  @Input() required: boolean=false;\r\n  @Input() size: string='';\r\n  @Input() spellcheck: boolean=false;\r\n  @Input() type: string='';\r\n  @Input() value: string='';\r\n  @Input() label: string='';\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
         }
     ],
     "modules": [],
@@ -309,16 +825,44 @@
                 "defaultValue": "{\r\n  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes)]\r\n}"
             },
             {
-                "name": "ButtonAppearance",
+                "name": "AutoCompleteTypes",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/button/button.options.ts",
+                "file": "src/other.options.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "{\r\n    accent: 'accent',\r\n    lightweight: 'lightweight',\r\n    neutral: 'neutral',\r\n    outline: 'outline',\r\n    stealth: 'stealth',\r\n} as const",
-                "rawdescription": "ButtonAppearance constants",
-                "description": "<p>ButtonAppearance constants</p>\n"
+                "defaultValue": "{\r\n    off:\"off\",\r\n    both:\"both\"\r\n} as const"
+            },
+            {
+                "name": "brandTheme",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/ThemeProvider/theme.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "{\r\n    // -------------- Custom brand color palatte -------------- //\r\n    \"color-text-primary\": \"#0f1a38\",\r\n    \"color-text-secondary\": \"#595959\",\r\n    \"color-primary-griege\": \"#f5f4f2\",\r\n    \"color-primary-blue\": \"#295cad\",\r\n    \"color-neutral-white\": \"#ffffff\",\r\n    \"color-neutral-10\": \"#f8f8f8\",\r\n    \"color-neutral-20\": \"#f2f3f3\",\r\n    \"color-neutral-30\": \"#e4e7e7\",\r\n    \"color-neutral-40\": \"#cacece\",\r\n    \"color-neutral-50\": \"#afb6b6\",\r\n    \"color-neutral-60\": \"#959d9d\",\r\n    \"color-neutral-70\": \"#788383\",\r\n    \"color-neutral-80\": \"#626a6a\",\r\n    \"color-neutral-90\": \"#3b4242\",\r\n    \"color-neutral-black\": \"#000000\",\r\n    // -------------- Custom brand color palatte -------------- //\r\n    borderRadiusNone: \"0\",\r\n    borderRadiusSmall: \"2px\",\r\n    borderRadiusMedium: \"4px\",\r\n    borderRadiusLarge: \"6px\",\r\n    borderRadiusXLarge: \"8px\",\r\n    borderRadiusCircular: \"10000px\",\r\n    fontSizeBase100: \"10px\",\r\n    fontSizeBase200: \"12px\",\r\n    fontSizeBase300: \"14px\",\r\n    fontSizeBase400: \"16px\",\r\n    fontSizeBase500: \"20px\",\r\n    fontSizeBase600: \"24px\",\r\n    fontSizeHero700: \"28px\",\r\n    fontSizeHero800: \"32px\",\r\n    fontSizeHero900: \"40px\",\r\n    fontSizeHero1000: \"68px\",\r\n    lineHeightBase100: \"14px\",\r\n    lineHeightBase200: \"16px\",\r\n    lineHeightBase300: \"20px\",\r\n    lineHeightBase400: \"22px\",\r\n    lineHeightBase500: \"28px\",\r\n    lineHeightBase600: \"32px\",\r\n    lineHeightHero700: \"36px\",\r\n    lineHeightHero800: \"40px\",\r\n    lineHeightHero900: \"52px\",\r\n    lineHeightHero1000: \"92px\",\r\n    fontFamilyBase:\r\n      \"'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif\",\r\n    fontFamilyMonospace: \"Consolas, 'Courier New', Courier, monospace\",\r\n    fontFamilyNumeric:\r\n      \"Bahnschrift, 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif\",\r\n    fontWeightRegular: 400,\r\n    fontWeightMedium: 500,\r\n    fontWeightSemibold: 600,\r\n    fontWeightBold: 700,\r\n    strokeWidthThin: \"1px\",\r\n    strokeWidthThick: \"2px\",\r\n    strokeWidthThicker: \"3px\",\r\n    strokeWidthThickest: \"4px\",\r\n    spacingHorizontalNone: \"0\",\r\n    spacingHorizontalXXS: \"2px\",\r\n    spacingHorizontalXS: \"4px\",\r\n    spacingHorizontalSNudge: \"6px\",\r\n    spacingHorizontalS: \"8px\",\r\n    spacingHorizontalMNudge: \"10px\",\r\n    spacingHorizontalM: \"12px\",\r\n    spacingHorizontalL: \"16px\",\r\n    spacingHorizontalXL: \"20px\",\r\n    spacingHorizontalXXL: \"24px\",\r\n    spacingHorizontalXXXL: \"32px\",\r\n    spacingVerticalNone: \"0\",\r\n    spacingVerticalXXS: \"2px\",\r\n    spacingVerticalXS: \"4px\",\r\n    spacingVerticalSNudge: \"6px\",\r\n    spacingVerticalS: \"8px\",\r\n    spacingVerticalMNudge: \"10px\",\r\n    spacingVerticalM: \"12px\",\r\n    spacingVerticalL: \"16px\",\r\n    spacingVerticalXL: \"20px\",\r\n    spacingVerticalXXL: \"24px\",\r\n    spacingVerticalXXXL: \"32px\",\r\n    durationUltraFast: \"50ms\",\r\n    durationFaster: \"100ms\",\r\n    durationFast: \"150ms\",\r\n    durationNormal: \"200ms\",\r\n    durationGentle: \"250ms\",\r\n    durationSlow: \"300ms\",\r\n    durationSlower: \"400ms\",\r\n    durationUltraSlow: \"500ms\",\r\n    curveAccelerateMax: \"cubic-bezier(0.9,0.1,1,0.2)\",\r\n    curveAccelerateMid: \"cubic-bezier(1,0,1,1)\",\r\n    curveAccelerateMin: \"cubic-bezier(0.8,0,0.78,1)\",\r\n    curveDecelerateMax: \"cubic-bezier(0.1,0.9,0.2,1)\",\r\n    curveDecelerateMid: \"cubic-bezier(0,0,0,1)\",\r\n    curveDecelerateMin: \"cubic-bezier(0.33,0,0.1,1)\",\r\n    curveEasyEaseMax: \"cubic-bezier(0.8,0,0.2,1)\",\r\n    curveEasyEase: \"cubic-bezier(0.33,0,0.67,1)\",\r\n    curveLinear: \"cubic-bezier(0,0,1,1)\",\r\n    colorNeutralForeground1: \"#295cad\",\r\n    colorNeutralForeground1Hover: \"#295cad\",\r\n    colorNeutralForeground1Pressed: \"#242424\",\r\n    colorNeutralForeground1Selected: \"#242424\",\r\n    colorNeutralForeground2: \"#424242\",\r\n    colorNeutralForeground2Hover: \"#242424\",\r\n    colorNeutralForeground2Pressed: \"#242424\",\r\n    colorNeutralForeground2Selected: \"#242424\",\r\n    colorNeutralForeground2BrandHover: \"#295cad\",\r\n    colorNeutralForeground2BrandPressed: \"#0c3069\",\r\n    colorNeutralForeground2BrandSelected: \"#295cad\",\r\n    colorNeutralForeground3: \"#616161\",\r\n    colorNeutralForeground3Hover: \"#424242\",\r\n    colorNeutralForeground3Pressed: \"#424242\",\r\n    colorNeutralForeground3Selected: \"#424242\",\r\n    colorNeutralForeground3BrandHover: \"#295cad\",\r\n    colorNeutralForeground3BrandPressed: \"#0c3069\",\r\n    colorNeutralForeground3BrandSelected: \"#295cad\",\r\n    colorNeutralForeground4: \"#707070\",\r\n    colorNeutralForegroundDisabled: \"#afb6b6\",\r\n    colorNeutralForegroundInvertedDisabled: \"rgba(255, 255, 255, 0.4)\",\r\n    colorBrandForegroundLink: \"#0c3069\",\r\n    colorBrandForegroundLinkHover: \"#295cad\",\r\n    colorBrandForegroundLinkPressed: \"#041e47\",\r\n    colorBrandForegroundLinkSelected: \"#0c3069\",\r\n    colorNeutralForeground2Link: \"#424242\",\r\n    colorNeutralForeground2LinkHover: \"#242424\",\r\n    colorNeutralForeground2LinkPressed: \"#242424\",\r\n    colorNeutralForeground2LinkSelected: \"#242424\",\r\n    colorCompoundBrandForeground1: \"#295cad\",\r\n    colorCompoundBrandForeground1Hover: \"#0c3069\",\r\n    colorCompoundBrandForeground1Pressed: \"#295cad\",\r\n    colorBrandForeground1: \"#295cad\",\r\n    colorBrandForeground2: \"#0c3069\",\r\n    colorBrandForeground2Hover: \"#295cad\",\r\n    colorBrandForeground2Pressed: \"#1a243f\",\r\n    colorNeutralForeground1Static: \"#242424\",\r\n    colorNeutralForegroundStaticInverted: \"#ffffff\",\r\n    colorNeutralForegroundInverted: \"#ffffff\",\r\n    colorNeutralForegroundInvertedHover: \"#ffffff\",\r\n    colorNeutralForegroundInvertedPressed: \"#ffffff\",\r\n    colorNeutralForegroundInvertedSelected: \"#ffffff\",\r\n    colorNeutralForegroundInverted2: \"#ffffff\",\r\n    colorNeutralForegroundOnBrand: \"#ffffff\",\r\n    colorNeutralForegroundInvertedLink: \"#ffffff\",\r\n    colorNeutralForegroundInvertedLinkHover: \"#ffffff\",\r\n    colorNeutralForegroundInvertedLinkPressed: \"#ffffff\",\r\n    colorNeutralForegroundInvertedLinkSelected: \"#ffffff\",\r\n    colorBrandForegroundInverted: \"#647ec0\",\r\n    colorBrandForegroundInvertedHover: \"#778cc8\",\r\n    colorBrandForegroundInvertedPressed: \"#647ec0\",\r\n    colorBrandForegroundOnLight: \"#295cad\",\r\n    colorBrandForegroundOnLightHover: \"#0c3069\",\r\n    colorBrandForegroundOnLightPressed: \"#223c6e\",\r\n    colorBrandForegroundOnLightSelected: \"#295cad\",\r\n    colorNeutralBackground1: \"#ffffff\",\r\n    colorNeutralBackground1Hover: \"#f2f3f3\",\r\n    colorNeutralBackground1Pressed: \"#cacece\",\r\n    colorNeutralBackground1Selected: \"#f2f3f3\",\r\n    colorNeutralBackground2: \"#fafafa\",\r\n    colorNeutralBackground2Hover: \"#f2f3f3\",\r\n    colorNeutralBackground2Pressed: \"#dbdbdb\",\r\n    colorNeutralBackground2Selected: \"#e6e6e6\",\r\n    colorNeutralBackground3: \"#f5f5f5\",\r\n    colorNeutralBackground3Hover: \"#ebebeb\",\r\n    colorNeutralBackground3Pressed: \"#d6d6d6\",\r\n    colorNeutralBackground3Selected: \"#e0e0e0\",\r\n    colorNeutralBackground4: \"#f2f3f3\",\r\n    colorNeutralBackground4Hover: \"#fafafa\",\r\n    colorNeutralBackground4Pressed: \"#f5f5f5\",\r\n    colorNeutralBackground4Selected: \"#ffffff\",\r\n    colorNeutralBackground5: \"#ebebeb\",\r\n    colorNeutralBackground5Hover: \"#f5f5f5\",\r\n    colorNeutralBackground5Pressed: \"#f2f3f3\",\r\n    colorNeutralBackground5Selected: \"#fafafa\",\r\n    colorNeutralBackground6: \"#e6e6e6\",\r\n    colorNeutralBackgroundInverted: \"#292929\",\r\n    colorNeutralBackgroundStatic: \"#333333\",\r\n    colorNeutralBackgroundAlpha: \"rgba(255, 255, 255, 0.5)\",\r\n    colorNeutralBackgroundAlpha2: \"rgba(255, 255, 255, 0.8)\",\r\n    colorSubtleBackground: \"transparent\",\r\n    colorSubtleBackgroundHover: \"#f5f5f5\",\r\n    colorSubtleBackgroundPressed: \"#e0e0e0\",\r\n    colorSubtleBackgroundSelected: \"#ebebeb\",\r\n    colorSubtleBackgroundLightAlphaHover: \"rgba(255, 255, 255, 0.7)\",\r\n    colorSubtleBackgroundLightAlphaPressed: \"rgba(255, 255, 255, 0.5)\",\r\n    colorSubtleBackgroundLightAlphaSelected: \"transparent\",\r\n    colorSubtleBackgroundInverted: \"transparent\",\r\n    colorSubtleBackgroundInvertedHover: \"rgba(0, 0, 0, 0.1)\",\r\n    colorSubtleBackgroundInvertedPressed: \"rgba(0, 0, 0, 0.3)\",\r\n    colorSubtleBackgroundInvertedSelected: \"rgba(0, 0, 0, 0.2)\",\r\n    colorTransparentBackground: \"transparent\",\r\n    colorTransparentBackgroundHover: \"transparent\",\r\n    colorTransparentBackgroundPressed: \"transparent\",\r\n    colorTransparentBackgroundSelected: \"transparent\",\r\n    colorNeutralBackgroundDisabled: \"#f2f3f3\",\r\n    colorNeutralBackgroundInvertedDisabled: \"rgba(255, 255, 255, 0.1)\",\r\n    colorNeutralStencil1: \"#e6e6e6\",\r\n    colorNeutralStencil2: \"#fafafa\",\r\n    colorNeutralStencil1Alpha: \"rgba(0, 0, 0, 0.1)\",\r\n    colorNeutralStencil2Alpha: \"rgba(0, 0, 0, 0.05)\",\r\n    colorBackgroundOverlay: \"rgba(0, 0, 0, 0.4)\",\r\n    colorScrollbarOverlay: \"rgba(0, 0, 0, 0.5)\",\r\n    colorBrandBackground: \"#295cad\",\r\n    colorBrandBackgroundHover: \"#0c3069\",\r\n    colorBrandBackgroundPressed: \"#041e47\",\r\n    colorBrandBackgroundSelected: \"#295cad\",\r\n    colorCompoundBrandBackground: \"#295cad\",\r\n    colorCompoundBrandBackgroundHover: \"#0c3069\",\r\n    colorCompoundBrandBackgroundPressed: \"#295cad\",\r\n    colorBrandBackgroundStatic: \"#295cad\",\r\n    colorBrandBackground2: \"#d1d6ec\",\r\n    colorBrandBackground2Hover: \"#bfc7e5\",\r\n    colorBrandBackground2Pressed: \"#9ba9d6\",\r\n    colorBrandBackground3Static: \"#295cad\",\r\n    colorBrandBackground4Static: \"#041e47\",\r\n    colorBrandBackgroundInverted: \"#ffffff\",\r\n    colorBrandBackgroundInvertedHover: \"#d1d6ec\",\r\n    colorBrandBackgroundInvertedPressed: \"#adb8de\",\r\n    colorBrandBackgroundInvertedSelected: \"#bfc7e5\",\r\n    colorNeutralCardBackground: \"#fafafa\",\r\n    colorNeutralCardBackgroundHover: \"#ffffff\",\r\n    colorNeutralCardBackgroundPressed: \"#f5f5f5\",\r\n    colorNeutralCardBackgroundSelected: \"#ebebeb\",\r\n    colorNeutralCardBackgroundDisabled: \"#f2f3f3\",\r\n    colorNeutralStrokeAccessible: \"#616161\",\r\n    colorNeutralStrokeAccessibleHover: \"#575757\",\r\n    colorNeutralStrokeAccessiblePressed: \"#4d4d4d\",\r\n    colorNeutralStrokeAccessibleSelected: \"#295cad\",\r\n    colorNeutralStroke1: \"#295cad\",\r\n    colorNeutralStroke1Hover: \"#295cad\",\r\n    colorNeutralStroke1Pressed: \"#295cad\",\r\n    colorNeutralStroke1Selected: \"#295cad\",\r\n    colorNeutralStroke2: \"#e0e0e0\",\r\n    colorNeutralStroke3: \"#f2f3f3\",\r\n    colorNeutralStrokeSubtle: \"#e0e0e0\",\r\n    colorNeutralStrokeOnBrand: \"#ffffff\",\r\n    colorNeutralStrokeOnBrand2: \"#ffffff\",\r\n    colorNeutralStrokeOnBrand2Hover: \"#ffffff\",\r\n    colorNeutralStrokeOnBrand2Pressed: \"#ffffff\",\r\n    colorNeutralStrokeOnBrand2Selected: \"#ffffff\",\r\n    colorBrandStroke1: \"#295cad\",\r\n    colorBrandStroke2: \"#adb8de\",\r\n    colorBrandStroke2Hover: \"#899acf\",\r\n    colorBrandStroke2Pressed: \"#295cad\",\r\n    colorBrandStroke2Contrast: \"#adb8de\",\r\n    colorCompoundBrandStroke: \"#295cad\",\r\n    colorCompoundBrandStrokeHover: \"#0c3069\",\r\n    colorCompoundBrandStrokePressed: \"#295cad\",\r\n    colorNeutralStrokeDisabled: \"#e4e7e7\",\r\n    colorNeutralStrokeInvertedDisabled: \"rgba(255, 255, 255, 0.4)\",\r\n    colorTransparentStroke: \"transparent\",\r\n    colorTransparentStrokeInteractive: \"transparent\",\r\n    colorTransparentStrokeDisabled: \"transparent\",\r\n    colorNeutralStrokeAlpha: \"rgba(0, 0, 0, 0.05)\",\r\n    colorNeutralStrokeAlpha2: \"rgba(255, 255, 255, 0.2)\",\r\n    colorStrokeFocus1: \"#ffffff\",\r\n    colorStrokeFocus2: \"#000000\",\r\n    colorNeutralShadowAmbient: \"rgba(0,0,0,0.12)\",\r\n    colorNeutralShadowKey: \"rgba(0,0,0,0.14)\",\r\n    colorNeutralShadowAmbientLighter: \"rgba(0,0,0,0.06)\",\r\n    colorNeutralShadowKeyLighter: \"rgba(0,0,0,0.07)\",\r\n    colorNeutralShadowAmbientDarker: \"rgba(0,0,0,0.20)\",\r\n    colorNeutralShadowKeyDarker: \"rgba(0,0,0,0.24)\",\r\n    colorBrandShadowAmbient: \"rgba(0,0,0,0.30)\",\r\n    colorBrandShadowKey: \"rgba(0,0,0,0.25)\",\r\n    colorPaletteRedBackground1: \"#fdf6f6\",\r\n    colorPaletteRedBackground2: \"#f1bbbc\",\r\n    colorPaletteRedBackground3: \"#d13438\",\r\n    colorPaletteRedForeground1: \"#bc2f32\",\r\n    colorPaletteRedForeground2: \"#751d1f\",\r\n    colorPaletteRedForeground3: \"#d13438\",\r\n    colorPaletteRedBorderActive: \"#d13438\",\r\n    colorPaletteRedBorder1: \"#f1bbbc\",\r\n    colorPaletteRedBorder2: \"#d13438\",\r\n    colorPaletteGreenBackground1: \"#f1faf1\",\r\n    colorPaletteGreenBackground2: \"#9fd89f\",\r\n    colorPaletteGreenBackground3: \"#107c10\",\r\n    colorPaletteGreenForeground1: \"#0e700e\",\r\n    colorPaletteGreenForeground2: \"#094509\",\r\n    colorPaletteGreenForeground3: \"#107c10\",\r\n    colorPaletteGreenBorderActive: \"#107c10\",\r\n    colorPaletteGreenBorder1: \"#9fd89f\",\r\n    colorPaletteGreenBorder2: \"#107c10\",\r\n    colorPaletteDarkOrangeBackground1: \"#fdf6f3\",\r\n    colorPaletteDarkOrangeBackground2: \"#f4bfab\",\r\n    colorPaletteDarkOrangeBackground3: \"#da3b01\",\r\n    colorPaletteDarkOrangeForeground1: \"#c43501\",\r\n    colorPaletteDarkOrangeForeground2: \"#7a2101\",\r\n    colorPaletteDarkOrangeForeground3: \"#da3b01\",\r\n    colorPaletteDarkOrangeBorderActive: \"#da3b01\",\r\n    colorPaletteDarkOrangeBorder1: \"#f4bfab\",\r\n    colorPaletteDarkOrangeBorder2: \"#da3b01\",\r\n    colorPaletteYellowBackground1: \"#fffef5\",\r\n    colorPaletteYellowBackground2: \"#fef7b2\",\r\n    colorPaletteYellowBackground3: \"#fde300\",\r\n    colorPaletteYellowForeground1: \"#817400\",\r\n    colorPaletteYellowForeground2: \"#817400\",\r\n    colorPaletteYellowForeground3: \"#fde300\",\r\n    colorPaletteYellowBorderActive: \"#fde300\",\r\n    colorPaletteYellowBorder1: \"#fef7b2\",\r\n    colorPaletteYellowBorder2: \"#fde300\",\r\n    colorPaletteBerryBackground1: \"#fdf5fc\",\r\n    colorPaletteBerryBackground2: \"#edbbe7\",\r\n    colorPaletteBerryBackground3: \"#c239b3\",\r\n    colorPaletteBerryForeground1: \"#af33a1\",\r\n    colorPaletteBerryForeground2: \"#6d2064\",\r\n    colorPaletteBerryForeground3: \"#c239b3\",\r\n    colorPaletteBerryBorderActive: \"#c239b3\",\r\n    colorPaletteBerryBorder1: \"#edbbe7\",\r\n    colorPaletteBerryBorder2: \"#c239b3\",\r\n    colorPaletteLightGreenBackground1: \"#f2fbf2\",\r\n    colorPaletteLightGreenBackground2: \"#a7e3a5\",\r\n    colorPaletteLightGreenBackground3: \"#13a10e\",\r\n    colorPaletteLightGreenForeground1: \"#11910d\",\r\n    colorPaletteLightGreenForeground2: \"#0b5a08\",\r\n    colorPaletteLightGreenForeground3: \"#13a10e\",\r\n    colorPaletteLightGreenBorderActive: \"#13a10e\",\r\n    colorPaletteLightGreenBorder1: \"#a7e3a5\",\r\n    colorPaletteLightGreenBorder2: \"#13a10e\",\r\n    colorPaletteMarigoldBackground1: \"#fefbf4\",\r\n    colorPaletteMarigoldBackground2: \"#f9e2ae\",\r\n    colorPaletteMarigoldBackground3: \"#eaa300\",\r\n    colorPaletteMarigoldForeground1: \"#d39300\",\r\n    colorPaletteMarigoldForeground2: \"#835b00\",\r\n    colorPaletteMarigoldForeground3: \"#eaa300\",\r\n    colorPaletteMarigoldBorderActive: \"#eaa300\",\r\n    colorPaletteMarigoldBorder1: \"#f9e2ae\",\r\n    colorPaletteMarigoldBorder2: \"#eaa300\",\r\n    colorPaletteRedForegroundInverted: \"#dc5e62\",\r\n    colorPaletteGreenForegroundInverted: \"#359b35\",\r\n    colorPaletteYellowForegroundInverted: \"#fef7b2\",\r\n    colorPaletteDarkRedBackground2: \"#d69ca5\",\r\n    colorPaletteDarkRedForeground2: \"#420610\",\r\n    colorPaletteDarkRedBorderActive: \"#750b1c\",\r\n    colorPaletteCranberryBackground2: \"#eeacb2\",\r\n    colorPaletteCranberryForeground2: \"#6e0811\",\r\n    colorPaletteCranberryBorderActive: \"#c50f1f\",\r\n    colorPalettePumpkinBackground2: \"#efc4ad\",\r\n    colorPalettePumpkinForeground2: \"#712d09\",\r\n    colorPalettePumpkinBorderActive: \"#ca5010\",\r\n    colorPalettePeachBackground2: \"#ffddb3\",\r\n    colorPalettePeachForeground2: \"#8f4e00\",\r\n    colorPalettePeachBorderActive: \"#ff8c00\",\r\n    colorPaletteGoldBackground2: \"#ecdfa5\",\r\n    colorPaletteGoldForeground2: \"#6c5700\",\r\n    colorPaletteGoldBorderActive: \"#c19c00\",\r\n    colorPaletteBrassBackground2: \"#e0cea2\",\r\n    colorPaletteBrassForeground2: \"#553e06\",\r\n    colorPaletteBrassBorderActive: \"#986f0b\",\r\n    colorPaletteBrownBackground2: \"#ddc3b0\",\r\n    colorPaletteBrownForeground2: \"#50301a\",\r\n    colorPaletteBrownBorderActive: \"#8e562e\",\r\n    colorPaletteForestBackground2: \"#bdd99b\",\r\n    colorPaletteForestForeground2: \"#294903\",\r\n    colorPaletteForestBorderActive: \"#498205\",\r\n    colorPaletteSeafoamBackground2: \"#a8f0cd\",\r\n    colorPaletteSeafoamForeground2: \"#00723b\",\r\n    colorPaletteSeafoamBorderActive: \"#00cc6a\",\r\n    colorPaletteDarkGreenBackground2: \"#9ad29a\",\r\n    colorPaletteDarkGreenForeground2: \"#063b06\",\r\n    colorPaletteDarkGreenBorderActive: \"#0b6a0b\",\r\n    colorPaletteLightTealBackground2: \"#a6e9ed\",\r\n    colorPaletteLightTealForeground2: \"#00666d\",\r\n    colorPaletteLightTealBorderActive: \"#00b7c3\",\r\n    colorPaletteTealBackground2: \"#9bd9db\",\r\n    colorPaletteTealForeground2: \"#02494c\",\r\n    colorPaletteTealBorderActive: \"#038387\",\r\n    colorPaletteSteelBackground2: \"#94c8d4\",\r\n    colorPaletteSteelForeground2: \"#00333f\",\r\n    colorPaletteSteelBorderActive: \"#005b70\",\r\n    colorPaletteBlueBackground2: \"#a9d3f2\",\r\n    colorPaletteBlueForeground2: \"#004377\",\r\n    colorPaletteBlueBorderActive: \"#0078d4\",\r\n    colorPaletteRoyalBlueBackground2: \"#9abfdc\",\r\n    colorPaletteRoyalBlueForeground2: \"#002c4e\",\r\n    colorPaletteRoyalBlueBorderActive: \"#004e8c\",\r\n    colorPaletteCornflowerBackground2: \"#c8d1fa\",\r\n    colorPaletteCornflowerForeground2: \"#2c3c85\",\r\n    colorPaletteCornflowerBorderActive: \"#4f6bed\",\r\n    colorPaletteNavyBackground2: \"#a3b2e8\",\r\n    colorPaletteNavyForeground2: \"#001665\",\r\n    colorPaletteNavyBorderActive: \"#0027b4\",\r\n    colorPaletteLavenderBackground2: \"#d2ccf8\",\r\n    colorPaletteLavenderForeground2: \"#3f3682\",\r\n    colorPaletteLavenderBorderActive: \"#7160e8\",\r\n    colorPalettePurpleBackground2: \"#c6b1de\",\r\n    colorPalettePurpleForeground2: \"#341a51\",\r\n    colorPalettePurpleBorderActive: \"#5c2e91\",\r\n    colorPaletteGrapeBackground2: \"#d9a7e0\",\r\n    colorPaletteGrapeForeground2: \"#4c0d55\",\r\n    colorPaletteGrapeBorderActive: \"#881798\",\r\n    colorPaletteLilacBackground2: \"#e6bfed\",\r\n    colorPaletteLilacForeground2: \"#63276d\",\r\n    colorPaletteLilacBorderActive: \"#b146c2\",\r\n    colorPalettePinkBackground2: \"#f7c0e3\",\r\n    colorPalettePinkForeground2: \"#80215d\",\r\n    colorPalettePinkBorderActive: \"#e43ba6\",\r\n    colorPaletteMagentaBackground2: \"#eca5d1\",\r\n    colorPaletteMagentaForeground2: \"#6b0043\",\r\n    colorPaletteMagentaBorderActive: \"#bf0077\",\r\n    colorPalettePlumBackground2: \"#d696c0\",\r\n    colorPalettePlumForeground2: \"#43002b\",\r\n    colorPalettePlumBorderActive: \"#77004d\",\r\n    colorPaletteBeigeBackground2: \"#d7d4d4\",\r\n    colorPaletteBeigeForeground2: \"#444241\",\r\n    colorPaletteBeigeBorderActive: \"#7a7574\",\r\n    colorPaletteMinkBackground2: \"#cecccb\",\r\n    colorPaletteMinkForeground2: \"#343231\",\r\n    colorPaletteMinkBorderActive: \"#5d5a58\",\r\n    colorPalettePlatinumBackground2: \"#cdd6d8\",\r\n    colorPalettePlatinumForeground2: \"#3b4447\",\r\n    colorPalettePlatinumBorderActive: \"#69797e\",\r\n    colorPaletteAnchorBackground2: \"#bcc3c7\",\r\n    colorPaletteAnchorForeground2: \"#202427\",\r\n    colorPaletteAnchorBorderActive: \"#394146\",\r\n    colorStatusSuccessBackground1: \"#f1faf1\",\r\n    colorStatusSuccessBackground2: \"#9fd89f\",\r\n    colorStatusSuccessBackground3: \"#107c10\",\r\n    colorStatusSuccessForeground1: \"#0e700e\",\r\n    colorStatusSuccessForeground2: \"#094509\",\r\n    colorStatusSuccessForeground3: \"#107c10\",\r\n    colorStatusSuccessForegroundInverted: \"#54b054\",\r\n    colorStatusSuccessBorderActive: \"#107c10\",\r\n    colorStatusSuccessBorder1: \"#9fd89f\",\r\n    colorStatusSuccessBorder2: \"#107c10\",\r\n    colorStatusWarningBackground1: \"#fff9f5\",\r\n    colorStatusWarningBackground2: \"#fdcfb4\",\r\n    colorStatusWarningBackground3: \"#f7630c\",\r\n    colorStatusWarningForeground1: \"#bc4b09\",\r\n    colorStatusWarningForeground2: \"#8a3707\",\r\n    colorStatusWarningForeground3: \"#bc4b09\",\r\n    colorStatusWarningForegroundInverted: \"#faa06b\",\r\n    colorStatusWarningBorderActive: \"#f7630c\",\r\n    colorStatusWarningBorder1: \"#fdcfb4\",\r\n    colorStatusWarningBorder2: \"#bc4b09\",\r\n    colorStatusDangerBackground1: \"#fdf3f4\",\r\n    colorStatusDangerBackground2: \"#eeacb2\",\r\n    colorStatusDangerBackground3: \"#c50f1f\",\r\n    colorStatusDangerForeground1: \"#b10e1c\",\r\n    colorStatusDangerForeground2: \"#6e0811\",\r\n    colorStatusDangerForeground3: \"#c50f1f\",\r\n    colorStatusDangerForegroundInverted: \"#dc626d\",\r\n    colorStatusDangerBorderActive: \"#c50f1f\",\r\n    colorStatusDangerBorder1: \"#eeacb2\",\r\n    colorStatusDangerBorder2: \"#c50f1f\",\r\n    colorStatusDangerBackground3Hover: \"#b10e1c\",\r\n    colorStatusDangerBackground3Pressed: \"#960b18\",\r\n    shadow2: \"0 0 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.14)\",\r\n    shadow4: \"0 0 2px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.14)\",\r\n    shadow8: \"0 0 2px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.14)\",\r\n    shadow16: \"0 0 2px rgba(0,0,0,0.12), 0 8px 16px rgba(0,0,0,0.14)\",\r\n    shadow28: \"0 0 8px rgba(0,0,0,0.12), 0 14px 28px rgba(0,0,0,0.14)\",\r\n    shadow64: \"0 0 8px rgba(0,0,0,0.12), 0 32px 64px rgba(0,0,0,0.14)\",\r\n    shadow2Brand: \"0 0 2px rgba(0,0,0,0.30), 0 1px 2px rgba(0,0,0,0.25)\",\r\n    shadow4Brand: \"0 0 2px rgba(0,0,0,0.30), 0 2px 4px rgba(0,0,0,0.25)\",\r\n    shadow8Brand: \"0 0 2px rgba(0,0,0,0.30), 0 4px 8px rgba(0,0,0,0.25)\",\r\n    shadow16Brand: \"0 0 2px rgba(0,0,0,0.30), 0 8px 16px rgba(0,0,0,0.25)\",\r\n    shadow28Brand: \"0 0 8px rgba(0,0,0,0.30), 0 14px 28px rgba(0,0,0,0.25)\",\r\n    shadow64Brand: \"0 0 8px rgba(0,0,0,0.30), 0 32px 64px rgba(0,0,0,0.25)\",\r\n  }"
+            },
+            {
+                "name": "brandThemeTokens",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/ThemeProvider/theme.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "themeToTokensObject(brandTheme)"
+            },
+            {
+                "name": "ButtonAppearance",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/other.options.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "{\r\n    accent: 'accent',\r\n    lightweight: 'lightweight',\r\n    neutral: 'neutral',\r\n    outline: 'outline',\r\n    stealth: 'stealth',\r\n} as const"
             },
             {
                 "name": "element",
@@ -329,10 +873,150 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "document.getElementById('dark')"
+            },
+            {
+                "name": "ImplicitSubmissionBlockingTypes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/text-input/text-input.options.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\n  'date',\n  'datetime-local',\n  'email',\n  'month',\n  'number',\n  'password',\n  'search',\n  'tel',\n  'text',\n  'time',\n  'url',\n  'week',\n]",
+                "rawdescription": "Input types that block implicit form submission.",
+                "description": "<p>Input types that block implicit form submission.</p>\n"
+            },
+            {
+                "name": "LabelPosition",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/other.options.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "{\r\n  above: 'above',\r\n  after: 'after',\r\n  before: 'before',\r\n} as const"
+            },
+            {
+                "name": "MessageBarIntent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/message-bar/message-bar.options.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "{\n  success: 'success',\n  warning: 'warning',\n  error: 'error',\n  info: 'info',\n} as const"
+            },
+            {
+                "name": "MessageBarLayout",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/message-bar/message-bar.options.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "{\n  multiline: 'multiline',\n  singleline: 'singleline',\n} as const"
+            },
+            {
+                "name": "MessageBarShape",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/message-bar/message-bar.options.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "{\n  rounded: 'rounded',\n  square: 'square',\n} as const"
+            },
+            {
+                "name": "OrientationTypes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/other.options.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "{\r\n    vertical: 'vertical',\r\n    horizontal: 'horizontal',\r\n} as const"
+            },
+            {
+                "name": "TabsList",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/other.options.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "{\r\n    apps:\"apps\",\r\n    entrees:\"entrees\",\r\n    desserts:\"desserts\"\r\n} as const"
+            },
+            {
+                "name": "TextInputAppearance",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/text-input/text-input.options.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "{\n  outline: 'outline',\n  underline: 'underline',\n  filledLighter: 'filled-lighter',\n  filledDarker: 'filled-darker',\n} as const",
+                "rawdescription": "Values for the `appearance` attribute on TextInput elements.",
+                "description": "<p>Values for the <code>appearance</code> attribute on TextInput elements.</p>\n"
+            },
+            {
+                "name": "TextInputControlSize",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/text-input/text-input.options.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "{\n  small: 'small',\n  medium: 'medium',\n  large: 'large',\n} as const",
+                "rawdescription": "TextInput configuration options.",
+                "description": "<p>TextInput configuration options.</p>\n"
+            },
+            {
+                "name": "TextInputType",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/text-input/text-input.options.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "{\n  email: 'email',\n  password: 'password',\n  tel: 'tel',\n  text: 'text',\n  url: 'url',\n} as const",
+                "rawdescription": "Values for the `type` attribute on TextInput elements.",
+                "description": "<p>Values for the <code>type</code> attribute on TextInput elements.</p>\n"
+            },
+            {
+                "name": "ValidationFlags",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/other.options.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "{\r\n    badInput: 'bad-input',\r\n    customError: 'custom-error',\r\n    patternMismatch: 'pattern-mismatch',\r\n    rangeOverflow: 'range-overflow',\r\n    rangeUnderflow: 'range-underflow',\r\n    stepMismatch: 'step-mismatch',\r\n    tooLong: 'too-long',\r\n    tooShort: 'too-short',\r\n    typeMismatch: 'type-mismatch',\r\n    valueMissing: 'value-missing',\r\n    valid: 'valid',\r\n  } as const"
             }
         ],
         "functions": [],
         "typealiases": [
+            {
+                "name": "AutoCompleteTypes",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "src/other.options.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 199
+            },
+            {
+                "name": "ButtonAppearance",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "src/other.options.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 199
+            },
             {
                 "name": "ButtonAppearance",
                 "ctype": "miscellaneous",
@@ -345,14 +1029,135 @@
                 "kind": 192
             },
             {
-                "name": "ButtonAppearance",
+                "name": "LabelPosition",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "",
-                "file": "src/button/button.options.ts",
+                "file": "src/other.options.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "description": "<p>A Button can be secondary, primary, outline, subtle, transparent</p>\n",
+                "description": "",
+                "kind": 199
+            },
+            {
+                "name": "MessageBarIntent",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "src/message-bar/message-bar.options.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 199
+            },
+            {
+                "name": "MessageBarLayout",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "src/message-bar/message-bar.options.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 199
+            },
+            {
+                "name": "MessageBarShape",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "src/message-bar/message-bar.options.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 199
+            },
+            {
+                "name": "OrientationTypes",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "src/other.options.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 199
+            },
+            {
+                "name": "OrientationTypes",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"vertical\" | \"horizontal\"",
+                "file": "src/radiobutton/radio.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            },
+            {
+                "name": "TabsList",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "src/other.options.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 199
+            },
+            {
+                "name": "TabsList",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"apps\" | \"entrees\" | \"desserts\"",
+                "file": "src/tabs/tabs.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            },
+            {
+                "name": "TextInputAppearance",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "src/text-input/text-input.options.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 199
+            },
+            {
+                "name": "TextInputControlSize",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "src/text-input/text-input.options.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 199
+            },
+            {
+                "name": "TextInputType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "src/text-input/text-input.options.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 199
+            },
+            {
+                "name": "ValidationFlags",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "src/other.options.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
                 "kind": 199
             }
         ],
@@ -370,18 +1175,88 @@
                     "defaultValue": "{\r\n  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes)]\r\n}"
                 }
             ],
-            "src/button/button.options.ts": [
+            "src/other.options.ts": [
+                {
+                    "name": "AutoCompleteTypes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/other.options.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "{\r\n    off:\"off\",\r\n    both:\"both\"\r\n} as const"
+                },
                 {
                     "name": "ButtonAppearance",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/button/button.options.ts",
+                    "file": "src/other.options.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "{\r\n    accent: 'accent',\r\n    lightweight: 'lightweight',\r\n    neutral: 'neutral',\r\n    outline: 'outline',\r\n    stealth: 'stealth',\r\n} as const",
-                    "rawdescription": "ButtonAppearance constants",
-                    "description": "<p>ButtonAppearance constants</p>\n"
+                    "defaultValue": "{\r\n    accent: 'accent',\r\n    lightweight: 'lightweight',\r\n    neutral: 'neutral',\r\n    outline: 'outline',\r\n    stealth: 'stealth',\r\n} as const"
+                },
+                {
+                    "name": "LabelPosition",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/other.options.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "{\r\n  above: 'above',\r\n  after: 'after',\r\n  before: 'before',\r\n} as const"
+                },
+                {
+                    "name": "OrientationTypes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/other.options.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "{\r\n    vertical: 'vertical',\r\n    horizontal: 'horizontal',\r\n} as const"
+                },
+                {
+                    "name": "TabsList",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/other.options.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "{\r\n    apps:\"apps\",\r\n    entrees:\"entrees\",\r\n    desserts:\"desserts\"\r\n} as const"
+                },
+                {
+                    "name": "ValidationFlags",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/other.options.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "{\r\n    badInput: 'bad-input',\r\n    customError: 'custom-error',\r\n    patternMismatch: 'pattern-mismatch',\r\n    rangeOverflow: 'range-overflow',\r\n    rangeUnderflow: 'range-underflow',\r\n    stepMismatch: 'step-mismatch',\r\n    tooLong: 'too-long',\r\n    tooShort: 'too-short',\r\n    typeMismatch: 'type-mismatch',\r\n    valueMissing: 'value-missing',\r\n    valid: 'valid',\r\n  } as const"
+                }
+            ],
+            "src/ThemeProvider/theme.ts": [
+                {
+                    "name": "brandTheme",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/ThemeProvider/theme.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "{\r\n    // -------------- Custom brand color palatte -------------- //\r\n    \"color-text-primary\": \"#0f1a38\",\r\n    \"color-text-secondary\": \"#595959\",\r\n    \"color-primary-griege\": \"#f5f4f2\",\r\n    \"color-primary-blue\": \"#295cad\",\r\n    \"color-neutral-white\": \"#ffffff\",\r\n    \"color-neutral-10\": \"#f8f8f8\",\r\n    \"color-neutral-20\": \"#f2f3f3\",\r\n    \"color-neutral-30\": \"#e4e7e7\",\r\n    \"color-neutral-40\": \"#cacece\",\r\n    \"color-neutral-50\": \"#afb6b6\",\r\n    \"color-neutral-60\": \"#959d9d\",\r\n    \"color-neutral-70\": \"#788383\",\r\n    \"color-neutral-80\": \"#626a6a\",\r\n    \"color-neutral-90\": \"#3b4242\",\r\n    \"color-neutral-black\": \"#000000\",\r\n    // -------------- Custom brand color palatte -------------- //\r\n    borderRadiusNone: \"0\",\r\n    borderRadiusSmall: \"2px\",\r\n    borderRadiusMedium: \"4px\",\r\n    borderRadiusLarge: \"6px\",\r\n    borderRadiusXLarge: \"8px\",\r\n    borderRadiusCircular: \"10000px\",\r\n    fontSizeBase100: \"10px\",\r\n    fontSizeBase200: \"12px\",\r\n    fontSizeBase300: \"14px\",\r\n    fontSizeBase400: \"16px\",\r\n    fontSizeBase500: \"20px\",\r\n    fontSizeBase600: \"24px\",\r\n    fontSizeHero700: \"28px\",\r\n    fontSizeHero800: \"32px\",\r\n    fontSizeHero900: \"40px\",\r\n    fontSizeHero1000: \"68px\",\r\n    lineHeightBase100: \"14px\",\r\n    lineHeightBase200: \"16px\",\r\n    lineHeightBase300: \"20px\",\r\n    lineHeightBase400: \"22px\",\r\n    lineHeightBase500: \"28px\",\r\n    lineHeightBase600: \"32px\",\r\n    lineHeightHero700: \"36px\",\r\n    lineHeightHero800: \"40px\",\r\n    lineHeightHero900: \"52px\",\r\n    lineHeightHero1000: \"92px\",\r\n    fontFamilyBase:\r\n      \"'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif\",\r\n    fontFamilyMonospace: \"Consolas, 'Courier New', Courier, monospace\",\r\n    fontFamilyNumeric:\r\n      \"Bahnschrift, 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif\",\r\n    fontWeightRegular: 400,\r\n    fontWeightMedium: 500,\r\n    fontWeightSemibold: 600,\r\n    fontWeightBold: 700,\r\n    strokeWidthThin: \"1px\",\r\n    strokeWidthThick: \"2px\",\r\n    strokeWidthThicker: \"3px\",\r\n    strokeWidthThickest: \"4px\",\r\n    spacingHorizontalNone: \"0\",\r\n    spacingHorizontalXXS: \"2px\",\r\n    spacingHorizontalXS: \"4px\",\r\n    spacingHorizontalSNudge: \"6px\",\r\n    spacingHorizontalS: \"8px\",\r\n    spacingHorizontalMNudge: \"10px\",\r\n    spacingHorizontalM: \"12px\",\r\n    spacingHorizontalL: \"16px\",\r\n    spacingHorizontalXL: \"20px\",\r\n    spacingHorizontalXXL: \"24px\",\r\n    spacingHorizontalXXXL: \"32px\",\r\n    spacingVerticalNone: \"0\",\r\n    spacingVerticalXXS: \"2px\",\r\n    spacingVerticalXS: \"4px\",\r\n    spacingVerticalSNudge: \"6px\",\r\n    spacingVerticalS: \"8px\",\r\n    spacingVerticalMNudge: \"10px\",\r\n    spacingVerticalM: \"12px\",\r\n    spacingVerticalL: \"16px\",\r\n    spacingVerticalXL: \"20px\",\r\n    spacingVerticalXXL: \"24px\",\r\n    spacingVerticalXXXL: \"32px\",\r\n    durationUltraFast: \"50ms\",\r\n    durationFaster: \"100ms\",\r\n    durationFast: \"150ms\",\r\n    durationNormal: \"200ms\",\r\n    durationGentle: \"250ms\",\r\n    durationSlow: \"300ms\",\r\n    durationSlower: \"400ms\",\r\n    durationUltraSlow: \"500ms\",\r\n    curveAccelerateMax: \"cubic-bezier(0.9,0.1,1,0.2)\",\r\n    curveAccelerateMid: \"cubic-bezier(1,0,1,1)\",\r\n    curveAccelerateMin: \"cubic-bezier(0.8,0,0.78,1)\",\r\n    curveDecelerateMax: \"cubic-bezier(0.1,0.9,0.2,1)\",\r\n    curveDecelerateMid: \"cubic-bezier(0,0,0,1)\",\r\n    curveDecelerateMin: \"cubic-bezier(0.33,0,0.1,1)\",\r\n    curveEasyEaseMax: \"cubic-bezier(0.8,0,0.2,1)\",\r\n    curveEasyEase: \"cubic-bezier(0.33,0,0.67,1)\",\r\n    curveLinear: \"cubic-bezier(0,0,1,1)\",\r\n    colorNeutralForeground1: \"#295cad\",\r\n    colorNeutralForeground1Hover: \"#295cad\",\r\n    colorNeutralForeground1Pressed: \"#242424\",\r\n    colorNeutralForeground1Selected: \"#242424\",\r\n    colorNeutralForeground2: \"#424242\",\r\n    colorNeutralForeground2Hover: \"#242424\",\r\n    colorNeutralForeground2Pressed: \"#242424\",\r\n    colorNeutralForeground2Selected: \"#242424\",\r\n    colorNeutralForeground2BrandHover: \"#295cad\",\r\n    colorNeutralForeground2BrandPressed: \"#0c3069\",\r\n    colorNeutralForeground2BrandSelected: \"#295cad\",\r\n    colorNeutralForeground3: \"#616161\",\r\n    colorNeutralForeground3Hover: \"#424242\",\r\n    colorNeutralForeground3Pressed: \"#424242\",\r\n    colorNeutralForeground3Selected: \"#424242\",\r\n    colorNeutralForeground3BrandHover: \"#295cad\",\r\n    colorNeutralForeground3BrandPressed: \"#0c3069\",\r\n    colorNeutralForeground3BrandSelected: \"#295cad\",\r\n    colorNeutralForeground4: \"#707070\",\r\n    colorNeutralForegroundDisabled: \"#afb6b6\",\r\n    colorNeutralForegroundInvertedDisabled: \"rgba(255, 255, 255, 0.4)\",\r\n    colorBrandForegroundLink: \"#0c3069\",\r\n    colorBrandForegroundLinkHover: \"#295cad\",\r\n    colorBrandForegroundLinkPressed: \"#041e47\",\r\n    colorBrandForegroundLinkSelected: \"#0c3069\",\r\n    colorNeutralForeground2Link: \"#424242\",\r\n    colorNeutralForeground2LinkHover: \"#242424\",\r\n    colorNeutralForeground2LinkPressed: \"#242424\",\r\n    colorNeutralForeground2LinkSelected: \"#242424\",\r\n    colorCompoundBrandForeground1: \"#295cad\",\r\n    colorCompoundBrandForeground1Hover: \"#0c3069\",\r\n    colorCompoundBrandForeground1Pressed: \"#295cad\",\r\n    colorBrandForeground1: \"#295cad\",\r\n    colorBrandForeground2: \"#0c3069\",\r\n    colorBrandForeground2Hover: \"#295cad\",\r\n    colorBrandForeground2Pressed: \"#1a243f\",\r\n    colorNeutralForeground1Static: \"#242424\",\r\n    colorNeutralForegroundStaticInverted: \"#ffffff\",\r\n    colorNeutralForegroundInverted: \"#ffffff\",\r\n    colorNeutralForegroundInvertedHover: \"#ffffff\",\r\n    colorNeutralForegroundInvertedPressed: \"#ffffff\",\r\n    colorNeutralForegroundInvertedSelected: \"#ffffff\",\r\n    colorNeutralForegroundInverted2: \"#ffffff\",\r\n    colorNeutralForegroundOnBrand: \"#ffffff\",\r\n    colorNeutralForegroundInvertedLink: \"#ffffff\",\r\n    colorNeutralForegroundInvertedLinkHover: \"#ffffff\",\r\n    colorNeutralForegroundInvertedLinkPressed: \"#ffffff\",\r\n    colorNeutralForegroundInvertedLinkSelected: \"#ffffff\",\r\n    colorBrandForegroundInverted: \"#647ec0\",\r\n    colorBrandForegroundInvertedHover: \"#778cc8\",\r\n    colorBrandForegroundInvertedPressed: \"#647ec0\",\r\n    colorBrandForegroundOnLight: \"#295cad\",\r\n    colorBrandForegroundOnLightHover: \"#0c3069\",\r\n    colorBrandForegroundOnLightPressed: \"#223c6e\",\r\n    colorBrandForegroundOnLightSelected: \"#295cad\",\r\n    colorNeutralBackground1: \"#ffffff\",\r\n    colorNeutralBackground1Hover: \"#f2f3f3\",\r\n    colorNeutralBackground1Pressed: \"#cacece\",\r\n    colorNeutralBackground1Selected: \"#f2f3f3\",\r\n    colorNeutralBackground2: \"#fafafa\",\r\n    colorNeutralBackground2Hover: \"#f2f3f3\",\r\n    colorNeutralBackground2Pressed: \"#dbdbdb\",\r\n    colorNeutralBackground2Selected: \"#e6e6e6\",\r\n    colorNeutralBackground3: \"#f5f5f5\",\r\n    colorNeutralBackground3Hover: \"#ebebeb\",\r\n    colorNeutralBackground3Pressed: \"#d6d6d6\",\r\n    colorNeutralBackground3Selected: \"#e0e0e0\",\r\n    colorNeutralBackground4: \"#f2f3f3\",\r\n    colorNeutralBackground4Hover: \"#fafafa\",\r\n    colorNeutralBackground4Pressed: \"#f5f5f5\",\r\n    colorNeutralBackground4Selected: \"#ffffff\",\r\n    colorNeutralBackground5: \"#ebebeb\",\r\n    colorNeutralBackground5Hover: \"#f5f5f5\",\r\n    colorNeutralBackground5Pressed: \"#f2f3f3\",\r\n    colorNeutralBackground5Selected: \"#fafafa\",\r\n    colorNeutralBackground6: \"#e6e6e6\",\r\n    colorNeutralBackgroundInverted: \"#292929\",\r\n    colorNeutralBackgroundStatic: \"#333333\",\r\n    colorNeutralBackgroundAlpha: \"rgba(255, 255, 255, 0.5)\",\r\n    colorNeutralBackgroundAlpha2: \"rgba(255, 255, 255, 0.8)\",\r\n    colorSubtleBackground: \"transparent\",\r\n    colorSubtleBackgroundHover: \"#f5f5f5\",\r\n    colorSubtleBackgroundPressed: \"#e0e0e0\",\r\n    colorSubtleBackgroundSelected: \"#ebebeb\",\r\n    colorSubtleBackgroundLightAlphaHover: \"rgba(255, 255, 255, 0.7)\",\r\n    colorSubtleBackgroundLightAlphaPressed: \"rgba(255, 255, 255, 0.5)\",\r\n    colorSubtleBackgroundLightAlphaSelected: \"transparent\",\r\n    colorSubtleBackgroundInverted: \"transparent\",\r\n    colorSubtleBackgroundInvertedHover: \"rgba(0, 0, 0, 0.1)\",\r\n    colorSubtleBackgroundInvertedPressed: \"rgba(0, 0, 0, 0.3)\",\r\n    colorSubtleBackgroundInvertedSelected: \"rgba(0, 0, 0, 0.2)\",\r\n    colorTransparentBackground: \"transparent\",\r\n    colorTransparentBackgroundHover: \"transparent\",\r\n    colorTransparentBackgroundPressed: \"transparent\",\r\n    colorTransparentBackgroundSelected: \"transparent\",\r\n    colorNeutralBackgroundDisabled: \"#f2f3f3\",\r\n    colorNeutralBackgroundInvertedDisabled: \"rgba(255, 255, 255, 0.1)\",\r\n    colorNeutralStencil1: \"#e6e6e6\",\r\n    colorNeutralStencil2: \"#fafafa\",\r\n    colorNeutralStencil1Alpha: \"rgba(0, 0, 0, 0.1)\",\r\n    colorNeutralStencil2Alpha: \"rgba(0, 0, 0, 0.05)\",\r\n    colorBackgroundOverlay: \"rgba(0, 0, 0, 0.4)\",\r\n    colorScrollbarOverlay: \"rgba(0, 0, 0, 0.5)\",\r\n    colorBrandBackground: \"#295cad\",\r\n    colorBrandBackgroundHover: \"#0c3069\",\r\n    colorBrandBackgroundPressed: \"#041e47\",\r\n    colorBrandBackgroundSelected: \"#295cad\",\r\n    colorCompoundBrandBackground: \"#295cad\",\r\n    colorCompoundBrandBackgroundHover: \"#0c3069\",\r\n    colorCompoundBrandBackgroundPressed: \"#295cad\",\r\n    colorBrandBackgroundStatic: \"#295cad\",\r\n    colorBrandBackground2: \"#d1d6ec\",\r\n    colorBrandBackground2Hover: \"#bfc7e5\",\r\n    colorBrandBackground2Pressed: \"#9ba9d6\",\r\n    colorBrandBackground3Static: \"#295cad\",\r\n    colorBrandBackground4Static: \"#041e47\",\r\n    colorBrandBackgroundInverted: \"#ffffff\",\r\n    colorBrandBackgroundInvertedHover: \"#d1d6ec\",\r\n    colorBrandBackgroundInvertedPressed: \"#adb8de\",\r\n    colorBrandBackgroundInvertedSelected: \"#bfc7e5\",\r\n    colorNeutralCardBackground: \"#fafafa\",\r\n    colorNeutralCardBackgroundHover: \"#ffffff\",\r\n    colorNeutralCardBackgroundPressed: \"#f5f5f5\",\r\n    colorNeutralCardBackgroundSelected: \"#ebebeb\",\r\n    colorNeutralCardBackgroundDisabled: \"#f2f3f3\",\r\n    colorNeutralStrokeAccessible: \"#616161\",\r\n    colorNeutralStrokeAccessibleHover: \"#575757\",\r\n    colorNeutralStrokeAccessiblePressed: \"#4d4d4d\",\r\n    colorNeutralStrokeAccessibleSelected: \"#295cad\",\r\n    colorNeutralStroke1: \"#295cad\",\r\n    colorNeutralStroke1Hover: \"#295cad\",\r\n    colorNeutralStroke1Pressed: \"#295cad\",\r\n    colorNeutralStroke1Selected: \"#295cad\",\r\n    colorNeutralStroke2: \"#e0e0e0\",\r\n    colorNeutralStroke3: \"#f2f3f3\",\r\n    colorNeutralStrokeSubtle: \"#e0e0e0\",\r\n    colorNeutralStrokeOnBrand: \"#ffffff\",\r\n    colorNeutralStrokeOnBrand2: \"#ffffff\",\r\n    colorNeutralStrokeOnBrand2Hover: \"#ffffff\",\r\n    colorNeutralStrokeOnBrand2Pressed: \"#ffffff\",\r\n    colorNeutralStrokeOnBrand2Selected: \"#ffffff\",\r\n    colorBrandStroke1: \"#295cad\",\r\n    colorBrandStroke2: \"#adb8de\",\r\n    colorBrandStroke2Hover: \"#899acf\",\r\n    colorBrandStroke2Pressed: \"#295cad\",\r\n    colorBrandStroke2Contrast: \"#adb8de\",\r\n    colorCompoundBrandStroke: \"#295cad\",\r\n    colorCompoundBrandStrokeHover: \"#0c3069\",\r\n    colorCompoundBrandStrokePressed: \"#295cad\",\r\n    colorNeutralStrokeDisabled: \"#e4e7e7\",\r\n    colorNeutralStrokeInvertedDisabled: \"rgba(255, 255, 255, 0.4)\",\r\n    colorTransparentStroke: \"transparent\",\r\n    colorTransparentStrokeInteractive: \"transparent\",\r\n    colorTransparentStrokeDisabled: \"transparent\",\r\n    colorNeutralStrokeAlpha: \"rgba(0, 0, 0, 0.05)\",\r\n    colorNeutralStrokeAlpha2: \"rgba(255, 255, 255, 0.2)\",\r\n    colorStrokeFocus1: \"#ffffff\",\r\n    colorStrokeFocus2: \"#000000\",\r\n    colorNeutralShadowAmbient: \"rgba(0,0,0,0.12)\",\r\n    colorNeutralShadowKey: \"rgba(0,0,0,0.14)\",\r\n    colorNeutralShadowAmbientLighter: \"rgba(0,0,0,0.06)\",\r\n    colorNeutralShadowKeyLighter: \"rgba(0,0,0,0.07)\",\r\n    colorNeutralShadowAmbientDarker: \"rgba(0,0,0,0.20)\",\r\n    colorNeutralShadowKeyDarker: \"rgba(0,0,0,0.24)\",\r\n    colorBrandShadowAmbient: \"rgba(0,0,0,0.30)\",\r\n    colorBrandShadowKey: \"rgba(0,0,0,0.25)\",\r\n    colorPaletteRedBackground1: \"#fdf6f6\",\r\n    colorPaletteRedBackground2: \"#f1bbbc\",\r\n    colorPaletteRedBackground3: \"#d13438\",\r\n    colorPaletteRedForeground1: \"#bc2f32\",\r\n    colorPaletteRedForeground2: \"#751d1f\",\r\n    colorPaletteRedForeground3: \"#d13438\",\r\n    colorPaletteRedBorderActive: \"#d13438\",\r\n    colorPaletteRedBorder1: \"#f1bbbc\",\r\n    colorPaletteRedBorder2: \"#d13438\",\r\n    colorPaletteGreenBackground1: \"#f1faf1\",\r\n    colorPaletteGreenBackground2: \"#9fd89f\",\r\n    colorPaletteGreenBackground3: \"#107c10\",\r\n    colorPaletteGreenForeground1: \"#0e700e\",\r\n    colorPaletteGreenForeground2: \"#094509\",\r\n    colorPaletteGreenForeground3: \"#107c10\",\r\n    colorPaletteGreenBorderActive: \"#107c10\",\r\n    colorPaletteGreenBorder1: \"#9fd89f\",\r\n    colorPaletteGreenBorder2: \"#107c10\",\r\n    colorPaletteDarkOrangeBackground1: \"#fdf6f3\",\r\n    colorPaletteDarkOrangeBackground2: \"#f4bfab\",\r\n    colorPaletteDarkOrangeBackground3: \"#da3b01\",\r\n    colorPaletteDarkOrangeForeground1: \"#c43501\",\r\n    colorPaletteDarkOrangeForeground2: \"#7a2101\",\r\n    colorPaletteDarkOrangeForeground3: \"#da3b01\",\r\n    colorPaletteDarkOrangeBorderActive: \"#da3b01\",\r\n    colorPaletteDarkOrangeBorder1: \"#f4bfab\",\r\n    colorPaletteDarkOrangeBorder2: \"#da3b01\",\r\n    colorPaletteYellowBackground1: \"#fffef5\",\r\n    colorPaletteYellowBackground2: \"#fef7b2\",\r\n    colorPaletteYellowBackground3: \"#fde300\",\r\n    colorPaletteYellowForeground1: \"#817400\",\r\n    colorPaletteYellowForeground2: \"#817400\",\r\n    colorPaletteYellowForeground3: \"#fde300\",\r\n    colorPaletteYellowBorderActive: \"#fde300\",\r\n    colorPaletteYellowBorder1: \"#fef7b2\",\r\n    colorPaletteYellowBorder2: \"#fde300\",\r\n    colorPaletteBerryBackground1: \"#fdf5fc\",\r\n    colorPaletteBerryBackground2: \"#edbbe7\",\r\n    colorPaletteBerryBackground3: \"#c239b3\",\r\n    colorPaletteBerryForeground1: \"#af33a1\",\r\n    colorPaletteBerryForeground2: \"#6d2064\",\r\n    colorPaletteBerryForeground3: \"#c239b3\",\r\n    colorPaletteBerryBorderActive: \"#c239b3\",\r\n    colorPaletteBerryBorder1: \"#edbbe7\",\r\n    colorPaletteBerryBorder2: \"#c239b3\",\r\n    colorPaletteLightGreenBackground1: \"#f2fbf2\",\r\n    colorPaletteLightGreenBackground2: \"#a7e3a5\",\r\n    colorPaletteLightGreenBackground3: \"#13a10e\",\r\n    colorPaletteLightGreenForeground1: \"#11910d\",\r\n    colorPaletteLightGreenForeground2: \"#0b5a08\",\r\n    colorPaletteLightGreenForeground3: \"#13a10e\",\r\n    colorPaletteLightGreenBorderActive: \"#13a10e\",\r\n    colorPaletteLightGreenBorder1: \"#a7e3a5\",\r\n    colorPaletteLightGreenBorder2: \"#13a10e\",\r\n    colorPaletteMarigoldBackground1: \"#fefbf4\",\r\n    colorPaletteMarigoldBackground2: \"#f9e2ae\",\r\n    colorPaletteMarigoldBackground3: \"#eaa300\",\r\n    colorPaletteMarigoldForeground1: \"#d39300\",\r\n    colorPaletteMarigoldForeground2: \"#835b00\",\r\n    colorPaletteMarigoldForeground3: \"#eaa300\",\r\n    colorPaletteMarigoldBorderActive: \"#eaa300\",\r\n    colorPaletteMarigoldBorder1: \"#f9e2ae\",\r\n    colorPaletteMarigoldBorder2: \"#eaa300\",\r\n    colorPaletteRedForegroundInverted: \"#dc5e62\",\r\n    colorPaletteGreenForegroundInverted: \"#359b35\",\r\n    colorPaletteYellowForegroundInverted: \"#fef7b2\",\r\n    colorPaletteDarkRedBackground2: \"#d69ca5\",\r\n    colorPaletteDarkRedForeground2: \"#420610\",\r\n    colorPaletteDarkRedBorderActive: \"#750b1c\",\r\n    colorPaletteCranberryBackground2: \"#eeacb2\",\r\n    colorPaletteCranberryForeground2: \"#6e0811\",\r\n    colorPaletteCranberryBorderActive: \"#c50f1f\",\r\n    colorPalettePumpkinBackground2: \"#efc4ad\",\r\n    colorPalettePumpkinForeground2: \"#712d09\",\r\n    colorPalettePumpkinBorderActive: \"#ca5010\",\r\n    colorPalettePeachBackground2: \"#ffddb3\",\r\n    colorPalettePeachForeground2: \"#8f4e00\",\r\n    colorPalettePeachBorderActive: \"#ff8c00\",\r\n    colorPaletteGoldBackground2: \"#ecdfa5\",\r\n    colorPaletteGoldForeground2: \"#6c5700\",\r\n    colorPaletteGoldBorderActive: \"#c19c00\",\r\n    colorPaletteBrassBackground2: \"#e0cea2\",\r\n    colorPaletteBrassForeground2: \"#553e06\",\r\n    colorPaletteBrassBorderActive: \"#986f0b\",\r\n    colorPaletteBrownBackground2: \"#ddc3b0\",\r\n    colorPaletteBrownForeground2: \"#50301a\",\r\n    colorPaletteBrownBorderActive: \"#8e562e\",\r\n    colorPaletteForestBackground2: \"#bdd99b\",\r\n    colorPaletteForestForeground2: \"#294903\",\r\n    colorPaletteForestBorderActive: \"#498205\",\r\n    colorPaletteSeafoamBackground2: \"#a8f0cd\",\r\n    colorPaletteSeafoamForeground2: \"#00723b\",\r\n    colorPaletteSeafoamBorderActive: \"#00cc6a\",\r\n    colorPaletteDarkGreenBackground2: \"#9ad29a\",\r\n    colorPaletteDarkGreenForeground2: \"#063b06\",\r\n    colorPaletteDarkGreenBorderActive: \"#0b6a0b\",\r\n    colorPaletteLightTealBackground2: \"#a6e9ed\",\r\n    colorPaletteLightTealForeground2: \"#00666d\",\r\n    colorPaletteLightTealBorderActive: \"#00b7c3\",\r\n    colorPaletteTealBackground2: \"#9bd9db\",\r\n    colorPaletteTealForeground2: \"#02494c\",\r\n    colorPaletteTealBorderActive: \"#038387\",\r\n    colorPaletteSteelBackground2: \"#94c8d4\",\r\n    colorPaletteSteelForeground2: \"#00333f\",\r\n    colorPaletteSteelBorderActive: \"#005b70\",\r\n    colorPaletteBlueBackground2: \"#a9d3f2\",\r\n    colorPaletteBlueForeground2: \"#004377\",\r\n    colorPaletteBlueBorderActive: \"#0078d4\",\r\n    colorPaletteRoyalBlueBackground2: \"#9abfdc\",\r\n    colorPaletteRoyalBlueForeground2: \"#002c4e\",\r\n    colorPaletteRoyalBlueBorderActive: \"#004e8c\",\r\n    colorPaletteCornflowerBackground2: \"#c8d1fa\",\r\n    colorPaletteCornflowerForeground2: \"#2c3c85\",\r\n    colorPaletteCornflowerBorderActive: \"#4f6bed\",\r\n    colorPaletteNavyBackground2: \"#a3b2e8\",\r\n    colorPaletteNavyForeground2: \"#001665\",\r\n    colorPaletteNavyBorderActive: \"#0027b4\",\r\n    colorPaletteLavenderBackground2: \"#d2ccf8\",\r\n    colorPaletteLavenderForeground2: \"#3f3682\",\r\n    colorPaletteLavenderBorderActive: \"#7160e8\",\r\n    colorPalettePurpleBackground2: \"#c6b1de\",\r\n    colorPalettePurpleForeground2: \"#341a51\",\r\n    colorPalettePurpleBorderActive: \"#5c2e91\",\r\n    colorPaletteGrapeBackground2: \"#d9a7e0\",\r\n    colorPaletteGrapeForeground2: \"#4c0d55\",\r\n    colorPaletteGrapeBorderActive: \"#881798\",\r\n    colorPaletteLilacBackground2: \"#e6bfed\",\r\n    colorPaletteLilacForeground2: \"#63276d\",\r\n    colorPaletteLilacBorderActive: \"#b146c2\",\r\n    colorPalettePinkBackground2: \"#f7c0e3\",\r\n    colorPalettePinkForeground2: \"#80215d\",\r\n    colorPalettePinkBorderActive: \"#e43ba6\",\r\n    colorPaletteMagentaBackground2: \"#eca5d1\",\r\n    colorPaletteMagentaForeground2: \"#6b0043\",\r\n    colorPaletteMagentaBorderActive: \"#bf0077\",\r\n    colorPalettePlumBackground2: \"#d696c0\",\r\n    colorPalettePlumForeground2: \"#43002b\",\r\n    colorPalettePlumBorderActive: \"#77004d\",\r\n    colorPaletteBeigeBackground2: \"#d7d4d4\",\r\n    colorPaletteBeigeForeground2: \"#444241\",\r\n    colorPaletteBeigeBorderActive: \"#7a7574\",\r\n    colorPaletteMinkBackground2: \"#cecccb\",\r\n    colorPaletteMinkForeground2: \"#343231\",\r\n    colorPaletteMinkBorderActive: \"#5d5a58\",\r\n    colorPalettePlatinumBackground2: \"#cdd6d8\",\r\n    colorPalettePlatinumForeground2: \"#3b4447\",\r\n    colorPalettePlatinumBorderActive: \"#69797e\",\r\n    colorPaletteAnchorBackground2: \"#bcc3c7\",\r\n    colorPaletteAnchorForeground2: \"#202427\",\r\n    colorPaletteAnchorBorderActive: \"#394146\",\r\n    colorStatusSuccessBackground1: \"#f1faf1\",\r\n    colorStatusSuccessBackground2: \"#9fd89f\",\r\n    colorStatusSuccessBackground3: \"#107c10\",\r\n    colorStatusSuccessForeground1: \"#0e700e\",\r\n    colorStatusSuccessForeground2: \"#094509\",\r\n    colorStatusSuccessForeground3: \"#107c10\",\r\n    colorStatusSuccessForegroundInverted: \"#54b054\",\r\n    colorStatusSuccessBorderActive: \"#107c10\",\r\n    colorStatusSuccessBorder1: \"#9fd89f\",\r\n    colorStatusSuccessBorder2: \"#107c10\",\r\n    colorStatusWarningBackground1: \"#fff9f5\",\r\n    colorStatusWarningBackground2: \"#fdcfb4\",\r\n    colorStatusWarningBackground3: \"#f7630c\",\r\n    colorStatusWarningForeground1: \"#bc4b09\",\r\n    colorStatusWarningForeground2: \"#8a3707\",\r\n    colorStatusWarningForeground3: \"#bc4b09\",\r\n    colorStatusWarningForegroundInverted: \"#faa06b\",\r\n    colorStatusWarningBorderActive: \"#f7630c\",\r\n    colorStatusWarningBorder1: \"#fdcfb4\",\r\n    colorStatusWarningBorder2: \"#bc4b09\",\r\n    colorStatusDangerBackground1: \"#fdf3f4\",\r\n    colorStatusDangerBackground2: \"#eeacb2\",\r\n    colorStatusDangerBackground3: \"#c50f1f\",\r\n    colorStatusDangerForeground1: \"#b10e1c\",\r\n    colorStatusDangerForeground2: \"#6e0811\",\r\n    colorStatusDangerForeground3: \"#c50f1f\",\r\n    colorStatusDangerForegroundInverted: \"#dc626d\",\r\n    colorStatusDangerBorderActive: \"#c50f1f\",\r\n    colorStatusDangerBorder1: \"#eeacb2\",\r\n    colorStatusDangerBorder2: \"#c50f1f\",\r\n    colorStatusDangerBackground3Hover: \"#b10e1c\",\r\n    colorStatusDangerBackground3Pressed: \"#960b18\",\r\n    shadow2: \"0 0 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.14)\",\r\n    shadow4: \"0 0 2px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.14)\",\r\n    shadow8: \"0 0 2px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.14)\",\r\n    shadow16: \"0 0 2px rgba(0,0,0,0.12), 0 8px 16px rgba(0,0,0,0.14)\",\r\n    shadow28: \"0 0 8px rgba(0,0,0,0.12), 0 14px 28px rgba(0,0,0,0.14)\",\r\n    shadow64: \"0 0 8px rgba(0,0,0,0.12), 0 32px 64px rgba(0,0,0,0.14)\",\r\n    shadow2Brand: \"0 0 2px rgba(0,0,0,0.30), 0 1px 2px rgba(0,0,0,0.25)\",\r\n    shadow4Brand: \"0 0 2px rgba(0,0,0,0.30), 0 2px 4px rgba(0,0,0,0.25)\",\r\n    shadow8Brand: \"0 0 2px rgba(0,0,0,0.30), 0 4px 8px rgba(0,0,0,0.25)\",\r\n    shadow16Brand: \"0 0 2px rgba(0,0,0,0.30), 0 8px 16px rgba(0,0,0,0.25)\",\r\n    shadow28Brand: \"0 0 8px rgba(0,0,0,0.30), 0 14px 28px rgba(0,0,0,0.25)\",\r\n    shadow64Brand: \"0 0 8px rgba(0,0,0,0.30), 0 32px 64px rgba(0,0,0,0.25)\",\r\n  }"
+                },
+                {
+                    "name": "brandThemeTokens",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/ThemeProvider/theme.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "themeToTokensObject(brandTheme)"
                 }
             ],
             "src/main.ts": [
@@ -395,11 +1270,161 @@
                     "type": "",
                     "defaultValue": "document.getElementById('dark')"
                 }
+            ],
+            "src/text-input/text-input.options.ts": [
+                {
+                    "name": "ImplicitSubmissionBlockingTypes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/text-input/text-input.options.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  'date',\n  'datetime-local',\n  'email',\n  'month',\n  'number',\n  'password',\n  'search',\n  'tel',\n  'text',\n  'time',\n  'url',\n  'week',\n]",
+                    "rawdescription": "Input types that block implicit form submission.",
+                    "description": "<p>Input types that block implicit form submission.</p>\n"
+                },
+                {
+                    "name": "TextInputAppearance",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/text-input/text-input.options.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "{\n  outline: 'outline',\n  underline: 'underline',\n  filledLighter: 'filled-lighter',\n  filledDarker: 'filled-darker',\n} as const",
+                    "rawdescription": "Values for the `appearance` attribute on TextInput elements.",
+                    "description": "<p>Values for the <code>appearance</code> attribute on TextInput elements.</p>\n"
+                },
+                {
+                    "name": "TextInputControlSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/text-input/text-input.options.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "{\n  small: 'small',\n  medium: 'medium',\n  large: 'large',\n} as const",
+                    "rawdescription": "TextInput configuration options.",
+                    "description": "<p>TextInput configuration options.</p>\n"
+                },
+                {
+                    "name": "TextInputType",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/text-input/text-input.options.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "{\n  email: 'email',\n  password: 'password',\n  tel: 'tel',\n  text: 'text',\n  url: 'url',\n} as const",
+                    "rawdescription": "Values for the `type` attribute on TextInput elements.",
+                    "description": "<p>Values for the <code>type</code> attribute on TextInput elements.</p>\n"
+                }
+            ],
+            "src/message-bar/message-bar.options.ts": [
+                {
+                    "name": "MessageBarIntent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/message-bar/message-bar.options.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "{\n  success: 'success',\n  warning: 'warning',\n  error: 'error',\n  info: 'info',\n} as const"
+                },
+                {
+                    "name": "MessageBarLayout",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/message-bar/message-bar.options.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "{\n  multiline: 'multiline',\n  singleline: 'singleline',\n} as const"
+                },
+                {
+                    "name": "MessageBarShape",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/message-bar/message-bar.options.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "{\n  rounded: 'rounded',\n  square: 'square',\n} as const"
+                }
             ]
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
+            "src/other.options.ts": [
+                {
+                    "name": "AutoCompleteTypes",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "src/other.options.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 199
+                },
+                {
+                    "name": "ButtonAppearance",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "src/other.options.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 199
+                },
+                {
+                    "name": "LabelPosition",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "src/other.options.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 199
+                },
+                {
+                    "name": "OrientationTypes",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "src/other.options.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 199
+                },
+                {
+                    "name": "TabsList",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "src/other.options.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 199
+                },
+                {
+                    "name": "ValidationFlags",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "src/other.options.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 199
+                }
+            ],
             "src/button/button.component.ts": [
                 {
                     "name": "ButtonAppearance",
@@ -413,16 +1438,99 @@
                     "kind": 192
                 }
             ],
-            "src/button/button.options.ts": [
+            "src/message-bar/message-bar.options.ts": [
                 {
-                    "name": "ButtonAppearance",
+                    "name": "MessageBarIntent",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "",
-                    "file": "src/button/button.options.ts",
+                    "file": "src/message-bar/message-bar.options.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "description": "<p>A Button can be secondary, primary, outline, subtle, transparent</p>\n",
+                    "description": "",
+                    "kind": 199
+                },
+                {
+                    "name": "MessageBarLayout",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "src/message-bar/message-bar.options.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 199
+                },
+                {
+                    "name": "MessageBarShape",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "src/message-bar/message-bar.options.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 199
+                }
+            ],
+            "src/radiobutton/radio.component.ts": [
+                {
+                    "name": "OrientationTypes",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"vertical\" | \"horizontal\"",
+                    "file": "src/radiobutton/radio.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                }
+            ],
+            "src/tabs/tabs.component.ts": [
+                {
+                    "name": "TabsList",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"apps\" | \"entrees\" | \"desserts\"",
+                    "file": "src/tabs/tabs.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                }
+            ],
+            "src/text-input/text-input.options.ts": [
+                {
+                    "name": "TextInputAppearance",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "src/text-input/text-input.options.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 199
+                },
+                {
+                    "name": "TextInputControlSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "src/text-input/text-input.options.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 199
+                },
+                {
+                    "name": "TextInputType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "src/text-input/text-input.options.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
                     "kind": 199
                 }
             ]
@@ -430,9 +1538,29 @@
     },
     "routes": [],
     "coverage": {
-        "count": 30,
-        "status": "medium",
+        "count": 16,
+        "status": "low",
         "files": [
+            {
+                "filePath": "src/ThemeProvider/theme.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "brandTheme",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/ThemeProvider/theme.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "brandThemeTokens",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
             {
                 "filePath": "src/app/app.component.ts",
                 "type": "component",
@@ -458,27 +1586,17 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
-                "filePath": "src/button/button.options.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "ButtonAppearance",
-                "coveragePercent": 100,
-                "coverageCount": "1/1",
-                "status": "very-good"
-            },
-            {
-                "filePath": "src/buttonExample/buttonExample.component.ts",
+                "filePath": "src/checkbox/checkbox.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "ButtonComponent",
-                "coveragePercent": 83,
-                "coverageCount": "5/6",
-                "status": "very-good"
+                "name": "CheckboxComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
             },
             {
                 "filePath": "src/main.ts",
@@ -489,6 +1607,181 @@
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
+            },
+            {
+                "filePath": "src/message-bar/message-bar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MessageBarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/message-bar/message-bar.options.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MessageBarIntent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/message-bar/message-bar.options.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MessageBarLayout",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/message-bar/message-bar.options.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MessageBarShape",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/other.options.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "AutoCompleteTypes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/other.options.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ButtonAppearance",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/other.options.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LabelPosition",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/other.options.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "OrientationTypes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/other.options.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TabsList",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/other.options.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ValidationFlags",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/radiobutton/radio.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RadioComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/switch/switch.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SwitchComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/tabs/tabs.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TabsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/text-input/text-input.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TextInputComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/22",
+                "status": "low"
+            },
+            {
+                "filePath": "src/text-input/text-input.options.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ImplicitSubmissionBlockingTypes",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/text-input/text-input.options.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TextInputAppearance",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/text-input/text-input.options.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TextInputControlSize",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/text-input/text-input.options.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TextInputType",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
             }
         ]
     }

@@ -7,22 +7,25 @@ import {
   provideFluentDesignSystem,
   fluentButton,
   fluentTextField,
-  fluentAccordion,
-  fluentAccordionItem,
-  fluentDataGridCell,
-  fluentDataGridRow,
-  fluentDataGrid
-} from '@fluentui/web-components';
+  fluentCheckbox,
+  fluentRadio,
+  fluentRadioGroup,
+  fluentSwitch,
+  fluentCombobox,
+  fluentOption,
+  } from '@fluentui/web-components';
 
 
 provideFluentDesignSystem().register(fluentButton(), fluentTextField());
 provideFluentDesignSystem()
     .register(
-        fluentAccordion(),
-        fluentAccordionItem(),
-        fluentDataGridCell(),
-        fluentDataGridRow(),
-        fluentDataGrid()
+        fluentCheckbox(),
+        fluentRadio(),
+        fluentRadioGroup(),
+        fluentSwitch(),
+        fluentCombobox(),
+        fluentOption(),
+        
     );
  
 
