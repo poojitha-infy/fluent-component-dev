@@ -65,7 +65,8 @@ function changeTheme(e: Event) {
 document.getElementById('theme-switch')?.addEventListener('change', changeTheme, false);
 
 // Setting the initial theme
-switchTheme('web-light');
+// switchTheme('web-light');
+switchTheme('delish-theme');
 
 
 const preview: Preview = {
